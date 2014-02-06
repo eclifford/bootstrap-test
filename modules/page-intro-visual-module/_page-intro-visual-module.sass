@@ -1,0 +1,100 @@
+.page-intro-visual-module
+	background: transparent
+	margin-left: auto !important
+
+	&.gold
+		border-bottom: 8px solid $visaGold
+
+	.copy
+		position: absolute
+		left: 0
+		right: 0
+		margin: 0 auto
+		text-align: center
+		width: 100%
+		padding: 0 5%
+		color: $visaWhite
+		max-width: 956px
+		bottom: 46px
+		+forTablet
+			bottom: 40px
+		+forMobile
+			bottom: 25px
+			padding: 0 8.75%
+
+		h1
+			font-family: $fontFamilyLight
+			line-height: 1.2
+
+		p
+			font-family: $fontFamilyLight
+			margin-bottom: 0px
+			margin-top: 15px
+			font-size: 22px
+			+forTablet
+				margin-top: 10px
+				font-size: 18px
+			+forMobile
+				font-size: 16px
+				padding-top: 6px
+
+	.image-holder
+		width: 100%
+		height: 475px
+		background-position: center center
+		background-repeat: no-repeat
+		left: 0
+		opacity: 1
+		+transition(.7s ease-in-out opacity)
+		overflow: hidden
+		+forBreakA
+			height: 238px
+			background-size: cover
+		+forBreakB
+			height: auto
+			background-size: cover
+		+forBreakC
+			height: auto
+			background-size: cover
+		+forBreakD
+			height: auto
+			max-height: 475px
+			background-size: cover
+		+forBreakE
+			height: 475px
+			background-size: cover
+		.fixed-ratio
+			background: url('./assets/images/hero/hero-bg-fade.png') repeat-x left bottom
+			background-size: 100% 65%
+			+forBreakA
+				width: 100%
+				height: 100%
+			+forBreakB
+				display: block
+				width: 100%
+				padding-top: 38%
+			+forBreakC
+				display: block
+				width: 100%
+				padding-top: 38%
+			+forBreakD
+				display: block
+				width: 100%
+				padding-top: 38%
+			+forBreakE
+				display: block
+				width: 100%
+				height: 475px
+
+	.tout-video-play-button
+		position: absolute
+		z-index: 5
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+
+		div
+			position: relative
+			width: 100%
+			height: 100%

@@ -1,0 +1,36 @@
+=indent($indent: 0)
+	padding-left: (25px*$indent)
+
+.module-doc-row
+	border: transparent
+
+	h4
+		margin-top: 15px
+
+	p
+
+		&.code-block
+			padding: 10px 3%
+			border: 1px solid $visaGreyMediumDark
+			background: $visaGreyPale
+
+		span
+			display: block
+
+	.ind1
+		+indent(1)
+
+	.ind2
+		+indent(2)
+
+	.ind3
+		+indent(3)
+
+	.ind4
+		+indent(4)
+
+	.ind5
+		+indent(5)
+
+	.ind6
+		+indent(6)

@@ -1,0 +1,34 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+	font-family: $fontFamilyLight
+	padding: 0
+	margin: 0
+	letter-spacing: 0.01em
+
+h1
+	font-size: 36px
+	+forTablet
+		font-size: 26px
+	+forMobile
+		font-size: 22px
+
+	&.small
+		font-size: 18px
+
+h2
+	font-size: 22px
+	margin-bottom: 5px
+	line-height: 1.2em
+	+forDesktop
+		margin-bottom: 8px
+	+forTablet
+		font-size: 18px
+	+forMobile
+		font-size: 18px
+
+h3
+	font-size: 22px
+	+forTablet
+		font-size: 18px
+	+forMobile
+		font-size: 18px

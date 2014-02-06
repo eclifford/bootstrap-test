@@ -1,0 +1,639 @@
+// Mixins
+// Snippets of reusable CSS to develop faster and keep code readable
+// -----------------------------------------------------------------
+
+// UTILITY MIXINS
+// --------------------------------------------------
+
+// Webkit-style focus
+// ------------------
+=tab-focus
+  // Default
+  outline: thin dotted #333
+  // Webkit
+  outline: 5px auto -webkit-focus-ring-color
+  outline-offset: -2px
+
+// Center-align a block level element
+// ----------------------------------
+=center-block
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+// IE7 inline-block
+// ----------------
+=ie7-inline-block
+  *display: inline
+  // IE7 inline-block hack
+  *zoom: 1
+
+// IE7 likes to collapse whitespace on either side of the inline-block elements.
+// Ems because we're attempting to match the width of a space character. Left
+// version is for form buttons, which typically come after other elements, and
+// right version is for icons, which come before. Applying both is ok, but it will
+// mean that space between those elements will be .6em (~2 space characters) in IE7,
+// instead of the 1 space in other browsers.
+=ie7-restore-left-whitespace
+  *margin-left: .3em
+  &:first-child
+    *margin-left: 0
+
+=ie7-restore-right-whitespace
+  *margin-right: .3em
+  &:last-child
+    *margin-left: 0
+
+// Sizing shortcuts
+// -------------------------
+=size($height, $width)
+  width: $width
+  height: $height
+
+=square($size)
+  +size($size, $size)
+
+// Placeholder text
+// -------------------------
+=placeholder($color: $placeholderText)
+  \:-moz-placeholder
+    color: $color
+  \:-ms-input-placeholder
+    color: $color
+  \::-webkit-input-placeholder
+    color: $color
+
+// Text overflow
+// -------------------------
+// Requires inline-block or block for proper styling
+=text-overflow
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+// CSS image replacement
+// -------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+=hide-text
+  font: 0 / 0 a
+  color: transparent
+  text-shadow: none
+  background-color: transparent
+  border: 0
+
+// FONTS
+//
+// TODO: Set Visa Fonts
+// Quick way to pick an visa font
+
+
+// FORMS
+// --------------------------------------------------
+
+// Block level inputs
+=input-block-level
+  display: block
+  width: 100%
+  min-height: 28px
+  // Make inputs at least the height of their button counterpart
+  +box-sizing(border-box)
+  // Makes inputs behave like true block-level elements
+
+// Mixin for form field states
+=formFieldState($textColor: #555555, $borderColor: #cccccc, $backgroundColor: whitesmoke)
+  // Set the text color
+  > label,
+  .help-block,
+  .help-inline
+    color: $textColor
+  // Style inputs accordingly
+  .checkbox,
+  .radio,
+  input,
+  select,
+  textarea
+    color: $textColor
+    border-color: $borderColor
+    &:focus
+      border-color: darken($borderColor, 10%)
+      +box-shadow(0 0 6px lighten($borderColor, 20%))
+  // Give a small background color for input-prepend/-append
+  .input-prepend .add-on,
+  .input-append .add-on
+    color: $textColor
+    background-color: $backgroundColor
+    border-color: $textColor
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Border Radius
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+// Drop shadows
+=box-shadow($shadow)
+  -webkit-box-shadow: $shadow
+  -moz-box-shadow: $shadow
+  box-shadow: $shadow
+
+// Transitions
+=transition($transition...)
+  -webkit-transition: $transition
+  -moz-transition: $transition
+  -o-transition: $transition
+  transition: $transition
+
+=transition-delay($transition-delay)
+  -webkit-transition-delay: $transition-delay
+  -moz-transition-delay: $transition-delay
+  -o-transition-delay: $transition-delay
+  transition-delay: $transition-delay
+
+// Transformations
+=rotate($degrees)
+  -webkit-transform: rotate($degrees)
+  -moz-transform: rotate($degrees)
+  -ms-transform: rotate($degrees)
+  -o-transform: rotate($degrees)
+  transform: rotate($degrees)
+
+=scale($ratio)
+  -webkit-transform: scale($ratio)
+  -moz-transform: scale($ratio)
+  -ms-transform: scale($ratio)
+  -o-transform: scale($ratio)
+  transform: scale($ratio)
+
+=translate($x, $y)
+  -webkit-transform: translate($x, $y)
+  -moz-transform: translate($x, $y)
+  -ms-transform: translate($x, $y)
+  -o-transform: translate($x, $y)
+  transform: translate($x, $y)
+
+=skew($x, $y)
+  -webkit-transform: skew($x, $y)
+  -moz-transform: skew($x, $y)
+  -ms-transform: skew($x, $y)
+  -o-transform: skew($x, $y)
+  transform: skew($x, $y)
+
+=translate3d($x, $y, $z)
+  -webkit-transform: translate($x, $y, $z)
+  -moz-transform: translate($x, $y, $z)
+  -ms-transform: translate($x, $y, $z)
+  -o-transform: translate($x, $y, $z)
+  transform: translate($x, $y, $z)
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden
+// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
+=backface-visibility($visibility)
+  -webkit-backface-visibility: $visibility
+  -moz-backface-visibility: $visibility
+  -ms-backface-visibility: $visibility
+  backface-visibility: $visibility
+
+// Background clipping
+// Heads up: FF 3.6 and under need "padding" instead of "padding-box"
+=background-clip($clip)
+  -webkit-background-clip: $clip
+  -moz-background-clip: $clip
+  background-clip: $clip
+
+// Background sizing
+=background-size($size)
+  -webkit-background-size: $size
+  -moz-background-size: $size
+  -o-background-size: $size
+  background-size: $size
+
+// Box sizing
+=box-sizing($boxmodel)
+  -webkit-box-sizing: $boxmodel
+  -moz-box-sizing: $boxmodel
+  -ms-box-sizing: $boxmodel
+  box-sizing: $boxmodel
+
+// User select
+// For selecting text on the page
+=user-select($select)
+  -webkit-user-select: $select
+  -moz-user-select: $select
+  -ms-user-select: $select
+  -o-user-select: $select
+  user-select: $select
+
+// Resize anything
+=resizable($direction)
+  resize: $direction
+  // Options: horizontal, vertical, both
+  overflow: auto
+  // Safari fix
+
+// CSS3 Content Columns
+=content-columns($columnCount, $columnGap: $gridGutterWidth)
+  -webkit-column-count: $columnCount
+  -moz-column-count: $columnCount
+  column-count: $columnCount
+  -webkit-column-gap: $columnGap
+  -moz-column-gap: $columnGap
+  column-gap: $columnGap
+
+// Optional hyphenation
+=hyphens($mode: auto)
+  word-wrap: break-word
+  -webkit-hyphens: $mode
+  -moz-hyphens: $mode
+  -ms-hyphens: $mode
+  -o-hyphens: $mode
+  hyphens: $mode
+
+// BACKGROUNDS
+// --------------------------------------------------
+
+// Add an alphatransparency value to any background or border color (via Elyse Holladay)
+=translucent-background($color: $visaWhite, $alpha: 1)
+  background-color: hsla(hue($color), saturation($color), lightness($color), $alpha)
+
+=translucent-border($color: $visaWhite, $alpha: 1)
+  border-color: hsla(hue($color), saturation($color), lightness($color), $alpha)
+  +background-clip(padding-box)
+
+// Gradient Bar Colors for buttons and alerts
+=gradientBar($primaryColor, $secondaryColor)
+  +gradient-vertical($primaryColor, $secondaryColor)
+  border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%)
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fade-in(rgba(0, 0, 0, 0.1), 0.15)
+
+// Gradients
+=gradient-horizontal($startColor: #555555, $endColor: #333333)
+  background-color: $endColor
+  background-image: -moz-linear-gradient(left, $startColor, $endColor)
+  // FF 3.6+
+  background-image: -ms-linear-gradient(left, $startColor, $endColor)
+  // IE10
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor))
+  // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(left, $startColor, $endColor)
+  // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(left, $startColor, $endColor)
+  // Opera 11.10
+  background-image: linear-gradient(left, $startColor, $endColor)
+  // Le standard
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{darken($startColor, 1%)}', endColorstr='#{darken($endColor, 1%)}', GradientType=1)
+  // IE9 and down
+
+=gradient-vertical($startColor: #555555, $endColor: #333333)
+  background-color: mix($startColor, $endColor, 60%)
+  background-image: -moz-linear-gradient(top, $startColor, $endColor)
+  // FF 3.6+
+  background-image: -ms-linear-gradient(top, $startColor, $endColor)
+  // IE10
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor))
+  // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(top, $startColor, $endColor)
+  // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(top, $startColor, $endColor)
+  // Opera 11.10
+  background-image: linear-gradient(top, $startColor, $endColor)
+  // The standard
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{darken($startColor, 1%)}', endColorstr='#{darken($endColor, 1%)}', GradientType=0)
+  // IE9 and down
+
+=gradient-directional($startColor: #555555, $endColor: #333333, $deg: 45deg)
+  background-color: $endColor
+  background-repeat: repeat-x
+  background-image: -moz-linear-gradient($deg, $startColor, $endColor)
+  // FF 3.6+
+  background-image: -ms-linear-gradient($deg, $startColor, $endColor)
+  // IE10
+  background-image: -webkit-linear-gradient($deg, $startColor, $endColor)
+  // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient($deg, $startColor, $endColor)
+  // Opera 11.10
+  background-image: linear-gradient($deg, $startColor, $endColor)
+  // The standard
+
+=gradient-vertical-three-colors($startColor: #00b3ee, $midColor: #7a43b6, $colorStop: 50%, $endColor: #c3325f)
+  background-color: mix($midColor, $endColor, 80%)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), color-stop($colorStop, $midColor), to($endColor))
+  background-image: -webkit-linear-gradient($startColor, $midColor $colorStop, $endColor)
+  background-image: -moz-linear-gradient(top, $startColor, $midColor $colorStop, $endColor)
+  background-image: -ms-linear-gradient($startColor, $midColor $colorStop, $endColor)
+  background-image: -o-linear-gradient($startColor, $midColor $colorStop, $endColor)
+  background-image: linear-gradient($startColor, $midColor $colorStop, $endColor)
+  background-repeat: no-repeat
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{darken($startColor, 1%)}', endColorstr='#{darken($endColor, 1%)}', GradientType=0)
+  // IE9 and down, gets no color-stop at all for proper fallback
+
+=gradient-radial($innerColor: #555555, $outerColor: #333333)
+  background-color: $outerColor
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($innerColor), to($outerColor))
+  background-image: -webkit-radial-gradient(circle, $innerColor, $outerColor)
+  background-image: -moz-radial-gradient(circle, $innerColor, $outerColor)
+  background-image: -ms-radial-gradient(circle, $innerColor, $outerColor)
+  background-image: -o-radial-gradient(circle, $innerColor, $outerColor)
+  background-repeat: no-repeat
+
+=gradient-striped($color, $angle: -45deg)
+  background-color: $color
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent))
+  background-image: -webkit-linear-gradient($angle, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+  background-image: -moz-linear-gradient($angle, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+  background-image: -ms-linear-gradient($angle, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+  background-image: -o-linear-gradient($angle, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+  background-image: linear-gradient($angle, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+
+// Reset filters for IE
+=gradient-reset-filter
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+
+// COMPONENT MIXINS
+// --------------------------------------------------
+
+// Horizontal dividers
+// -------------------------
+// Dividers (basically an hr) within dropdowns and nav lists
+=nav-divider($top: #e5e5e5, $bottom: $visaWhite)
+  // IE7 needs a set width since we gave a height. Restricting just
+  // to IE7 to keep the 1px left/right space in other browsers.
+  // It is unclear where IE is getting the extra space that we need
+  // to negative-margin away, but so it goes.
+  *width: 100%
+  height: 1px
+  margin: $baseLineHeight / 2 - 1 1px
+  // 8px 1px
+  *margin: -5px 0 5px
+  overflow: hidden
+  background-color: $top
+  border-bottom: 1px solid $bottom
+
+// Button backgrounds
+// ------------------
+=buttonBackground($startColor, $endColor)
+  // gradientBar will set the background to a pleasing blend of these, to support IE<=9
+  +gradientBar($startColor, $endColor)
+  *background-color: $endColor
+  // Darken IE7 buttons by default so they stand out more given they won't have borders
+  +gradient-reset-filter
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:active, &.active, &.disabled, &[disabled]
+    background-color: $endColor
+    *background-color: darken($endColor, 5%)
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active
+    background-color: darken($endColor, 10%) \9
+
+// Navbar vertical align
+// -------------------------
+// Vertically center elements in the navbar.
+// Example: an element has a height of 30px, so write out `.navbarVerticalAlign(30px);` to calculate the appropriate top margin.
+=navbarVerticalAlign($elementHeight)
+  margin-top: ($navbarHeight - $elementHeight) / 2
+
+// Popover arrows
+// -------------------------
+// For tipsies and popovers
+=popoverArrow-top($arrowWidth: 5px, $color: $visaBlack)
+  bottom: 0
+  left: 50%
+  margin-left: -$arrowWidth
+  border-left: $arrowWidth solid transparent
+  border-right: $arrowWidth solid transparent
+  border-top: $arrowWidth solid $color
+
+=popoverArrow-left($arrowWidth: 5px, $color: $visaBlack)
+  top: 50%
+  right: 0
+  margin-top: -$arrowWidth
+  border-top: $arrowWidth solid transparent
+  border-bottom: $arrowWidth solid transparent
+  border-left: $arrowWidth solid $color
+
+=popoverArrow-bottom($arrowWidth: 5px, $color: $visaBlack)
+  top: 0
+  left: 50%
+  margin-left: -$arrowWidth
+  border-left: $arrowWidth solid transparent
+  border-right: $arrowWidth solid transparent
+  border-bottom: $arrowWidth solid $color
+
+=popoverArrow-right($arrowWidth: 5px, $color: $visaBlack)
+  top: 50%
+  left: 0
+  margin-top: -$arrowWidth
+  border-top: $arrowWidth solid transparent
+  border-bottom: $arrowWidth solid transparent
+  border-right: $arrowWidth solid $color
+
+// Grid System
+// -----------
+
+// Centered container element
+=container-fixed
+  margin-right: auto
+  margin-left: auto
+  +pie-clearfix
+
+// Table columns
+=tableColumns($columnSpan: 1)
+  float: none
+  // undo default grid column styles
+  width: $gridColumnWidth * $columnSpan + $gridGutterWidth * ($columnSpan - 1) - 16
+  // 16 is total padding on left and right of table cells
+  margin-left: 0
+  // undo default grid column styles
+
+// Make a Grid
+// Use .makeRow and .makeColumn to assign semantic layouts grid system behavior
+=makeRow
+  margin-left: $gridGutterWidth * -1
+  +pie-clearfix
+
+=makeColumn($columns: 1, $offset: 0, $gutter: 1)
+  margin-left: $gridColumnWidth * $offset + $gridGutterWidth * ($offset - 1) + ($gridGutterWidth * $gutter) * 2
+  width: $gridColumnWidth * $columns + $gridGutterWidth * ($columns - 1)
+  padding: 0
+
+// The Grid
+=core-offset($columns, $gridColumnWidth, $gridGutterWidth)
+  margin-left: $gridColumnWidth * $columns + $gridGutterWidth * ($columns + 1)
+
+=input-span($columns, $gridColumnWidth, $gridGutterWidth)
+  width: $gridColumnWidth * $columns + $gridGutterWidth * ($columns - 1) - 10
+
+=grid-input($gridColumnWidth, $gridGutterWidth)
+  input,
+  textarea,
+  .uneditable-input
+    margin-left: 0
+    // override margin-left from core grid system
+  // generate .spanX
+  $i: $gridColumns
+  @while $i > 0
+    input.span#{$i},
+    textarea.span#{$i},
+    .uneditable-input.span#{$i}
+      +input-span($i, $gridColumnWidth, $gridGutterWidth)
+    $i: $i - 1
+
+=setupMainGrid
+  .grid-container
+    +container
+
+=fullBleed($type: responsive)
+  position: relative
+
+  @if $type == responsive
+    left: - $grid-padding
+    width: $container-width
+  @else if $type == fluid
+    $percentageAdjustment: 0.55%
+    left: - $grid-padding - $percentageAdjustment
+    width: $container-width + ($grid-padding * 2) + ($percentageAdjustment * 2)
+
+=border-alpha($r, $g, $b, $a, $w, $t: true, $rt: true, $bt: true, $l: true)
+  @if $t == true
+    border-top: $w solid rgb($r, $g, $b)
+    border-top: $w solid rgba($r, $g, $b, $a)
+  @else
+    border-top: 0px
+  @if $rt == true
+    border-right: $w solid rgb($r, $g, $b)
+    border-right: $w solid rgba($r, $g, $b, $a)
+  @else
+    border-right: 0px
+  @if $bt == true
+    border-bottom: $w solid rgb($r, $g, $b)
+    border-bottom: $w solid rgba($r, $g, $b, $a)
+  @else
+    border-bottom: 0px
+  @if $l == true
+    border-left: $w solid rgb($r, $g, $b)
+    border-left: $w solid rgba($r, $g, $b, $a)
+  @else
+    border-left: 0px
+  -webkit-background-clip: padding-box // for Safari
+  background-clip: padding-box // for IE9+, Firefox 4+, Opera, Chrome
+
+=button($txtColor, $bgColor, $bgColorHover, $insetShadowActive, $iconSprite, $iconLocation: right)
+  +transition(background-color 0.2s ease-in)
+  display: inline-block
+  line-height: 12px
+  padding: .7em 1em .6em
+  outline: none
+  cursor: pointer
+  text-align: center
+  font-size: 12px
+  text-decoration: none
+  background-color: $bgColor
+  color: $txtColor
+  min-width: 60px
+  border: none
+  // keeping in case inner shadows come back
+  // @include single-box-shadow($insetShadow, 0px, 1px, 0px, 0px, inset);
+  &:hover
+    background-color: $bgColorHover
+    text-decoration: none
+    color: $txtColor
+    // keeping in case button background gradients come back
+    // @include background-gradient($bgColor, $fromColor, $toColor);
+  &:active
+    background-color: $bgColorHover
+    +single-box-shadow($insetShadowActive, 0, 0, 5px, 5px, inset)
+  span.icon
+    @if $iconLocation == right
+      margin: 0 0 3px 8px
+    @else
+      margin: 0 8px 3px 0
+    +global-sprite($iconSprite)
+
+=all-retina-sprites($map, $retinaMap)
+  +forRetina
+    $base-class: sprite-map-name($map)
+    $sprite-names: sprite-names($retinaMap)
+    $retina-width: image-width( sprite-path($retinaMap) ) / 2
+
+    // change the background image source for all global sprites
+    .#{$base-class}-all-retina-sprites
+      background-image: sprite-url($retinaMap)
+
+    // add the custom background-size for retina sprites
+    @each $sprite in $sprite-names
+      .#{$base-class}-#{$sprite}
+        @extend .#{$base-class}-all-retina-sprites
+        background-size: $retina-width auto
+
+=forRetina
+  @media (-webkit-min-device-pixel-ratio: 2), (-min-moz-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2 / 1), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)
+    @content
+
+@function cinematicHeight($width)
+  @return $width*9/16
+
+// RESPONSIVE
+// ----------------------------------
+=forMobile($env: device)
+  @if $env == device
+    html.mobile &
+      @content
+  @else if $env == grid
+    +forBreakA
+      @content
+    +forBreakB
+      @content
+=forTablet($env: device)
+  @if $env == device
+    html.tablet &
+      @content
+  @else if $env == grid
+    +forBreakC
+      @content
+    +forBreakD
+      @content
+=forDesktop($env: device)
+  @if $env == device
+    html.desktop &
+      @content
+  @else if $env == grid
+    +forBreakE
+      @content
+    +forBreakF
+      @content
+
+=forTouch
+  html.touch &
+    @content
+
+=forBreakA
+  $container-width: 100%
+  html.break-a &
+    @content
+=forBreakB
+  $container-width: 100%
+  html.break-b &
+    @content
+=forBreakC
+  $container-width: $breakC_min
+  html.break-c &
+    @content
+=forBreakD
+  $container-width: $breakD_min
+  html.break-d &
+    @content
+=forBreakE
+  $container-width: $breakE_min
+  html.break-e &
+    @content
+=forBreakF
+  $container-width: $breakF_min
+  html.break-f &
+    @content

@@ -1,0 +1,22 @@
+<script id="results-module-template" type="text/html">
+    <div class="module-body" data-category="{{category}}">
+        <img class="result-image" src="{{image-url}}" />
+        <h2>{{headline-data}}</h2>
+        <div class="copy" id="module-desc">
+            <p>{{subheadline-data}}</p>
+        </div>
+
+        <ul class="cta-stack">
+            {{#cta-data}}
+            <li>
+                <a class="btn-primary" href="{{cta-url}}">{{cta-data}}</a>
+            </li>
+            {{/cta-data}}
+            {{#cta2-url}}
+            <li class="cta-2">
+                <a class="btn-secondary" href="{{cta2-url}}">{{cta2-data}}</a>
+            </li>
+            {{/cta2-url}}
+        </ul>
+    </div>
+</script>

@@ -1,0 +1,250 @@
+.filter-body
+  @include gradient-horizontal($startColor: #f9a715, $endColor: #ffc902)
+  .inner-row
+    +forMobile
+      width: 85% !important
+    +forMobile
+      width: 90% !important
+    .filter-module
+      width: 100%
+      padding: 36px 20px
+      text-align: center
+      font-size: 30px
+      +forMobile
+        font-size: 22px
+        padding: 29px 0
+        text-align: left
+      +forTablet
+        font-size: 29px
+        padding: 28px 10px
+      .filter-form
+        font-family: $fontFamilyLight
+        @include gradient-horizontal($startColor: #fab31a, $endColor: #fecd06)
+        padding: 6px 0
+        +forMobile
+          background: transparent
+        .btn-group
+          width: auto
+          text-align: right
+          display: inherit !important
+          +forMobile
+            text-align: left
+            margin-left: 0
+          +forTablet
+            margin-left: 0
+          +forDesktop
+            margin: 0
+          .filter-label
+            font-family: $fontFamilyRegular
+            color: $visaWhite
+            +forMobile
+              font-size: 18px
+              position: relative
+              left: 20px
+          .btn-wrap
+            display: inline
+            &.open .dropdown-toggle
+              outline: 0
+              @include box-shadow(0 0 transparent)
+            &.open .btn-default.dropdown-toggle
+              color: transparent
+              background-color: transparent
+              border-color: transparent
+              background-image: inherit
+            &.dropdown-toggle:active
+              outline: 0
+            .btn
+              float: none
+              display: inline
+              font-family: $fontFamilyLight
+              min-width: 56%
+              margin: -3px 25px 0 4px
+              padding: 0
+              font-size: inherit
+              line-height: 1.1
+              border-radius: 0
+              text-align: left
+              margin-left: 0
+              +forMobile
+                width: 100%
+                @include gradient-horizontal($startColor: #fab31a, $endColor: #fecd06)
+                padding: 6px 10px 7px 20px
+            .btn:active, .btn.active
+              @include box-shadow(0 0 transparent)
+            .btn-default
+              color: $visaBlue
+              background-color: transparent
+              border-color: transparent
+              border: 0
+              .filter-value
+                display: inline-block
+                width: 86%
+                font-family: inherit
+                +transition($uiTextShadowTransition)
+                letter-spacing: 1px
+                background: url('./assets/images/common/border-dotted-white-10px.png')
+                background-repeat: repeat-x
+                background-position: left bottom
+                &.glow
+                  text-shadow: 0 0 6px rgba(26, 31, 113, .5)
+                +forMobile
+                  font-size: 18px
+              .caret
+                position: relative
+                top: -1px
+                margin-left: 2px
+                vertical-align: middle
+                border-top: 0 solid transparent
+                border-right: 0 solid transparent
+                border-left: 0 solid transparent
+                border-bottom: 0 solid transparent
+                background-repeat: no-repeat
+                +forMobile
+                  width: 23px
+                  height: 14px
+                  background-image: url('./assets/images/common/icon-arrow-down-white-46x28.png')
+                  background-size: 23px 14px
+                +forTablet
+                  width: 23px
+                  height: 14px
+                  background-image: url('./assets/images/common/icon-arrow-down-white-23x14.png')
+                +forDesktop
+                  width: 29px
+                  height: 17px
+                  background-image: url('./assets/images/common/icon-arrow-down-white-29x17.png')
+
+          .dropdown-menu
+            position: absolute
+            z-index: 1000
+            width: 100%
+            min-width: 460px
+            padding: 0
+            margin: 0
+            border: 0
+            font-size: 22px
+            background-color: $uiWhite
+            +border-radius(0)
+            @include box-shadow(0 0 transparent)
+            +forMobile
+              min-width: 180px
+              width: 100%
+            +forTablet
+              min-width: 315px
+            li
+              text-align: left
+              border-top: 2px solid $visaGreyPale
+              &:first-child
+                border-top: 0
+              a
+                font-family: $fontFamilyLight
+                line-height: 1.1
+                color: $visaBlue
+                +transition($uiBackgroundTransition)
+                +forMobile
+                  font-size: 17px
+                  padding: 12px 10% 12px 10%
+                +forTablet
+                  padding: 24px 20% 22px 20%
+                +forDesktop
+                  padding: 24px 20% 22px 20%
+                &:hover
+                  @include opacity(1)
+                  background-color: $visaGreyLight
+
+          &:hover
+            .caret
+              @include opacity($uiOpacityValueHover)
+
+.filter-results
+  width: 100%
+  position: relative
+  display: none
+  ul
+    list-style: none
+    width: 100%
+    padding: 0
+    margin: 0
+    border: 0
+    font-size: 22px
+    background-color: $visaGreyPale
+    +border-radius(0)
+    @include box-shadow(0 0 transparent)
+    li
+      display: none
+      text-align: left
+      border-top: 2px solid $visaGreyLight
+      &:first-child
+        border-top: 0
+      &.result-hdr
+        .result-title
+          display: block
+          font-family: $fontFamilyLight
+          line-height: 1.1
+          color: $visaGreyMedium
+          background-color: #dbdbdb
+          +forMobile
+            font-size: 18px
+            padding: 14px 20% 14px 20%
+          +forTablet
+            padding: 24px 20% 22px 20%
+          +forDesktop
+            padding: 24px 20% 22px 20%
+        .result-close
+          float: right
+          display: block
+          width: 24px
+          height: 24px
+          background-image: url('./assets/images/common/icon-close-24x24.png')
+          background-size: 24px 24px
+          text-indent: -9999px
+          cursor: pointer
+      a
+        display: block
+        font-family: $fontFamilyLight
+        line-height: 1.1
+        color: $visaBlue
+        +transition($uiBackgroundTransition)
+        +forMobile
+          font-size: 18px
+          padding: 14px 20% 14px 20%
+        +forTablet
+          padding: 24px 20% 22px 20%
+        +forDesktop
+          padding: 24px 20% 22px 20%
+        &:hover
+          text-decoration: none
+          @include opacity(1)
+          background-color: $visaGreyLight
+
+  .filter-content-overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 10
+    background: $uiWhite
+    @include opacity($uiOpacityValueNone)
+
+.filter-content-target
+  width: 100%
+  min-height: 400px
+  background: #eee
+  position: relative
+  &.border
+    border-top: $borderStandard
+  .filter-content-result
+    display: none
+
+.open .btn-default.dropdown-toggle
+  background-color: transparent !important
+  border-color: transparent !important
+  color: $visaBlue
+
+.zindex-mobile-fix
+  +forTablet
+    position: relative
+    z-index: 2000 !important
+  +forMobile
+    position: relative
+    z-index: 2000 !important

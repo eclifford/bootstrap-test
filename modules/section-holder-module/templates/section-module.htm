@@ -1,0 +1,36 @@
+<script id="section-module-template" type="text/html">
+    <div class="section-module">
+      <div class="section-header">
+        <h2>{{{headline-data}}}</h2>
+      </div>
+      <div class="copy">
+        <p>{{{subheadline-data}}}</p>
+      </div>
+      <div class="dropdown">
+        <div class="btn-group">
+          {{#dropdown-data.length}}
+          <div class="bootstrap-select">
+            <select>
+              <option value="">View all</option>
+              {{#dropdown-data}}
+              <option value="{{dropdown-url}}">{{dropdown-name}}</option>
+              {{/dropdown-data}}
+            </select>
+          </div>
+          {{/dropdown-data.length}}
+          {{#cta-text}}
+          <a class="bootstrap-select-go btn-primary" href="{{default-url-data}}">{{{cta-text}}}</a>
+          {{/cta-text}}
+          {{#secondary-cta-text}}
+          <a class="bootstrap-select-go btn-secondary" href="{{default-url-data}}">{{{secondary-cta-text}}}</a>
+          {{/secondary-cta-text}}
+          {{#pdf-cta-text}}
+          <a class="bootstrap-select-go btn-secondary pdf" href="{{default-url-data}}">{{{pdf-cta-text}}}</a>
+          {{/pdf-cta-text}}
+          {{#external-cta-text}}
+          <a class="bootstrap-select-go btn-secondary external-link" href="{{default-url-data}}" target="_blank">{{{external-cta-text}}}</a>
+          {{/external-cta-text}}
+        </div>
+      </div>
+    </div>
+</script>

@@ -1,0 +1,87 @@
+$icon-font-path: "/vendor/bower_components/sass-bootstrap/fonts/";
+
+/* base imports */
+@import "vendor/bower_components/sass-bootstrap/lib/variables";
+@import "vendor/bower_components/sass-bootstrap/lib/mixins";
+
+// Reset
+@import "vendor/bower_components/sass-bootstrap/lib/normalize";
+@import "vendor/bower_components/sass-bootstrap/lib/print";
+
+
+// Core CSS
+@import "vendor/bower_components/sass-bootstrap/lib/scaffolding";
+@import "vendor/bower_components/sass-bootstrap/lib/type";
+@import "vendor/bower_components/sass-bootstrap/lib/code";
+@import "vendor/bower_components/sass-bootstrap/lib/grid";
+@import "vendor/bower_components/sass-bootstrap/lib/tables";
+@import "vendor/bower_components/sass-bootstrap/lib/forms";
+@import "vendor/bower_components/sass-bootstrap/lib/buttons";
+
+// Components
+@import "vendor/bower_components/sass-bootstrap/lib/glyphicons";
+@import "vendor/bower_components/sass-bootstrap/lib/dropdowns";
+@import "vendor/bower_components/sass-bootstrap/lib/button-groups";
+@import "vendor/bower_components/sass-bootstrap/lib/input-groups";
+@import "vendor/bower_components/sass-bootstrap/lib/navs";
+@import "vendor/bower_components/sass-bootstrap/lib/navbar";
+@import "vendor/bower_components/sass-bootstrap/lib/carousel";
+// @import "vendor/bower_components/sass-bootstrap/lib/breadcrumbs";
+// @import "vendor/bower_components/sass-bootstrap/lib/labels";
+// @import "vendor/bower_components/sass-bootstrap/lib/badges";
+// @import "vendor/bower_components/sass-bootstrap/lib/thumbnails";
+// @import "vendor/bower_components/sass-bootstrap/lib/alerts";
+// @import "vendor/bower_components/sass-bootstrap/lib/media";
+// @import "vendor/bower_components/sass-bootstrap/lib/list-group";
+// @import "vendor/bower_components/sass-bootstrap/lib/panels";
+// @import "vendor/bower_components/sass-bootstrap/lib/wells";
+// @import "vendor/bower_components/sass-bootstrap/lib/close";
+
+@import 'vendor/bower_components/vex/sass/vex';
+@import 'vendor/bower_components/vex/sass/vex-theme-plain';
+
+@import 'compass';
+
+/* tracking for font :: DO NOT REMOVE */
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=1bedfb8b-be36-4567-812a-ceac655a78db");
+@import 'assets/styles/fonts';
+
+// main visa vars
+@import 'assets/styles/mixins';
+@import 'assets/styles/variables';
+@import 'assets/styles/ui-components';
+@import 'assets/styles/form-elements';
+@import 'assets/styles/docs';
+
+// import mixins AFTER compass
+@import 'assets/styles/mixins';
+
+// Page Structure
+@import 'assets/styles/layouts';
+@import 'assets/styles/text';
+
+// Modules
+@import 'modules/header-module/header-module';
+@import 'assets/styles/responsive';
+
+//By Module Sass
+@import 'modules/tab-holder-module/tab-holder-module';
+@import 'modules/footer-module/footer-module';
+@import 'modules/results-module/results-module';
+@import 'modules/results-holder-module/results-holder-module';
+@import 'modules/page-intro-copy-module/page-intro-copy-module';
+@import 'modules/page-intro-visual-module/page-intro-visual-module';
+@import 'modules/filter-module/filter-module';
+@import 'modules/user-action-module/user-action-module';
+@import 'modules/hero-module/hero-module';
+@import 'modules/breadcrumb-module/breadcrumb-module';
+@import 'modules/tout-holder-module/tout-holder-module';
+@import 'modules/section-holder-module/section-holder-module';
+@import 'modules/hero-module/hero-module';
+@import 'modules/custom-content-module/custom-content-module';
+
+//For Visa Bootstrap ONLY
+@import 'assets/styles/modules';
+
+// CSS Reset - import AFTER compass
+@import 'assets/styles/reset';

@@ -1,0 +1,109 @@
+.custom-content-module
+  color: $visaGreyMedium
+  font-family: $fontFamilyLight
+  .section
+    padding-bottom: 70px
+    padding-top: 70px
+    border-bottom: $borderStandard
+
+    a.btn-secondary.pdf
+      display: inline-block
+
+  p
+    font-size: 16px
+    line-height: 1.2em
+    +forDesktop
+      font-size: 18px
+
+  .row.nested-no-max-width
+    padding: $desktopVerticalSpaceStandard 0
+    +forTablet
+      padding: $tabletVerticalSpaceStandard 0
+      font-size: 0
+    +forMobile
+      padding: $mobileVerticalSpaceStandard 0
+
+    &.white
+      background-color: $visaWhite
+      &.border-top
+        border-top: $borderStandard
+      &.border-bottom
+        border-bottom: $borderStandard
+    &.gray
+      background-color: $visaGreyPalest
+      &.border-top
+        border-top: $borderStandard
+      &.border-bottom
+        border-bottom: $borderStandard
+
+    .cell
+      vertical-align: top
+      +forTablet
+        margin-right: 0 !important
+        display: inline-block
+      +forMobile
+        width: 100%
+        padding-left: 0
+        padding-right: 0
+
+      &.full-content
+        >p.lgTxt
+          font-size: 16px
+          +forDesktop
+            font-size: 22px
+
+  .quote
+    background-image: url('./assets/images/common/quotation.png')
+    background-position: 3.4883721% 0
+    background-repeat: no-repeat
+    padding-left: 13.139535%
+    +forMobile
+      background-position: top center
+      padding: 75px 0 0
+
+    h4
+      color: $visaBlue
+      +forMobile
+        font-size: 22px
+
+    .name
+      font-weight: bold
+      margin-right: 26px
+    span
+      +forMobile
+        display: block
+        margin-bottom: 15px
+
+      &:last-child
+        +forMobile
+          margin-bottom: 0
+
+    p
+      margin: 30px 0 0
+
+  .link-row
+    margin-top: 15px
+
+  h2
+    color: $visaBlue
+
+  h3
+    color: $visaBlue
+
+.downloads-list
+  list-style: none
+  padding: 10px 0 0
+
+  li
+    margin-bottom: 15px
+
+.blue-bullets
+  list-style: none
+  padding: 0
+  margin: 35px 0 35px 28px
+
+  li
+    padding-left: 13px
+    font-size: 18px
+    margin-bottom: 10px
+    background: url('./assets/images/common/bullet.gif') no-repeat left 8px

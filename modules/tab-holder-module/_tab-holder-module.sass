@@ -1,0 +1,137 @@
+.tab-content
+	padding: 83px 0
+	+forTablet
+		padding: 70px 0
+	+forMobile
+		display: none !important
+
+.grid-container .col-lg-11.intro-copy:first-child,
+.grid-container .col-md-11.intro-copy:first-child,
+	margin-left: 0 !important
+	+forDesktop
+		margin-left: 5.12552% !important
+
+.tab-content-holder
+	+forMobile
+		display: block
+		padding: 40px 0
+		width: 100%
+		background: $visaGreyPale
+
+	.intro-copy
+		+forTablet
+			margin-right: 0 !important
+			display: inline-block
+
+	.image-holder
+		+forTablet
+			margin-right: 0 !important
+			display: inline-block
+			vertical-align: top
+		+forMobile
+			padding-top: 40px
+
+	h3
+		color: $visaBlue
+		font-family: $fontFamilyLight
+		margin-bottom: 5px
+		line-height: 1.2em
+		+forDesktop
+			margin-bottom: 8px
+
+	p
+		color: $visaGreyMedium
+		font-family: $fontFamilyLight
+		margin-bottom: 10px
+		font-size: 18px
+		+forMobile
+			margin-bottom: 0
+		+forDesktop
+			font-size: 22px
+
+	.main-copy
+		margin-bottom: 26px
+		line-height: 1.2em
+		+forMobile
+			margin-bottom: 26px
+		+forTablet
+			margin-bottom: 24px
+		span
+			display: block
+			margin-top: 30px
+			font-size: 18px
+
+	.fancy-select
+		max-width: 245px
+		width: 100% !important
+		color: $visaGreyMedLight
+
+	input
+		margin-right: 2px
+		border: none
+		color: $visaGreyMedLight
+		font-size: 14px
+		padding: 11px 12px
+		+forMobile
+			width: 100%
+			margin-bottom: 10px
+
+.grid-container
+	background: transparent
+
+	.tab-module
+		+forTablet
+			font-size: 0
+		+forMobile
+			border-top: $borderStandard
+			width: 100%
+
+		.tab-content-holder
+			+forTablet
+				display: none !important
+			+forDesktop
+				display: none !important
+			+forMobile
+				display: block
+				padding-left: 12.5%
+				padding-right: 12.5%
+
+		.ui-accordion
+			>.ui-accordion-content
+				box-sizing:content-box
+				-moz-box-sizing:content-box
+
+		.tab-content-holder
+			display: none
+			+forMobile
+				display: block
+
+		.tab
+			color: $visaBlue
+			border-bottom: 8px solid transparent
+			cursor: pointer
+			outline: none
+			display: inline-block
+			+forMobile
+				border-bottom: $borderStandard
+				padding: 30px 12.5%
+				background: $visaWhite url('./assets/images/common/tab-plus-24x24.png') no-repeat 87.5% center
+
+			&:hover
+				border-color: $visaGold
+
+			&.active
+				border-color: $visaGold
+				+forMobile
+					background-image: url('./assets/images/common/tab-minus-24x24.png')
+
+			h2
+				height: 33px
+				font-size: 18px
+				line-height: 1.2em
+				+forMobile
+					height: auto
+
+.ui-accordion .ui-accordion-content
+	box-sizing:content-box
+	-moz-box-sizing:content-box

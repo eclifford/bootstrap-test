@@ -1,0 +1,22 @@
+<script type="text/html" id="tout-module">
+  {{#data.module-data}}
+  <div class="col-lg-{{col-width}} col-md-{{col-width}} col-sm-{{col-width}} tout">
+    <div class="tout-background {{module-id}} {{text-color-class}}">
+      <div class="tout-image">
+        {{#media-url-data}}
+        <img class="scalable" src="{{media-url-data}}" alt="{{media-alt-text}}" />
+        {{/media-url-data}}
+      </div>
+      {{#video-url-data}}
+      <div class="tout-video-play-button" data-video-url="{{video-url-data}}">
+          <a class="btn-video-play">Play</a>
+      </div>
+      {{/video-url-data}}
+      <div class="tout-copy">
+        <a href="{{url-data}}" data-video-url="{{video-url-data}}" target="{{media-target}}">{{{headline-data}}}</a>
+      </div>
+      <div class="tout-shadow"></div>
+    </div>
+  </div>
+  {{/data.module-data}}
+</script>

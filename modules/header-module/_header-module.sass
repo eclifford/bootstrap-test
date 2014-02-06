@@ -1,0 +1,522 @@
+// NAVBAR (FIXED AND STATIC)
+// -------------------------
+
+$logoHeight: 25px
+$navMenuTransform: -1 * $navMenuWidthDesktop
+$navMenuMobileTransform: -1 * $navMenuWidthMobile
+
+body.open-nav
+  > .container,
+  > .container
+    position: fixed
+    z-index: 2
+    overflow: hidden
+  header
+    > .container
+      position: fixed
+      width: 100% !important
+    .collapse
+      position: absolute !important
+
+// DO NOT DELETE
+// BOOTSTRAP OVERRIDE
+.container .navbar-header,
+.container .navbar-collapse
+  margin-left: 0 !important
+  margin-right: 0 !important
+
+header
+  margin-bottom: 0px !important
+  .container
+    width: auto !important
+  &.nav-deeplinked
+    li.primary.breadcrumb
+      background-color: $visaBlack !important
+  span#visa-header-logo
+    background-image: url('./assets/images/nav/visa-logo-white.png')
+    width: 81px
+    height: 27px
+    display: inline-block
+    +forDesktop
+      background-image: url('./assets/images/nav/visa-logo-white-desktop.png')
+      width: 98px
+      height: 32px
+
+
+// COMMON STYLES
+// -------------
+.navbar
+  // Fix for IE7's bad z-indexing so dropdowns don't appear below content that follows the navbar
+  *position: relative
+  *z-index: 3
+  overflow: visible
+  border: none
+  background: none
+  z-index: 3
+  > .container
+    padding: 0px
+  > .container .navbar-brand
+    margin-left: 34px
+    margin-top: 34px
+    padding: 0px
+    +forDesktop
+      margin-top: 30px
+    &:hover
+      opacity: 1
+
+  .cssgradients &
+    .navbar-header
+      +gradient-horizontal($navbarBackgroundHighlight, $navbarBackground)
+
+  .no-cssgradients &
+    .navbar-header
+      background-color: $navbarBackground
+
+  .nav-container,
+  .navbar-header
+    +transition-property(transform)
+    +transition-duration($panelTransitionDuration)
+    +transition-timing-function($panelTransitionEase)
+    +backface-visibility(false)
+    height: 92px
+    button
+      margin-top: 33px
+      color: $visaWhite
+
+  .navbar-header
+    float: none
+    .navbar-header-inner
+      max-width: 1024px
+      width: 100%
+      margin: 0 auto
+
+    .nav-search
+      background: none
+      border: none
+      float: right
+      margin-right: 25px
+      position: absolute
+      width: 25px
+      height: 25px
+      top: -25px
+      right: -20px
+
+
+  .navbar-toggle
+    border: none
+    display: block !important
+    background: none !important
+    border: none !important
+    padding: 0px
+    margin-top: 34px
+    margin-right: 34px
+    font-size: 18px
+    font-weight: 100
+    letter-spacing: 1px
+    span.toggle-text
+      position: relative
+      font-family: $fontFamilyLight
+      font-weight: 100
+      +forMobile
+        display: none
+    span.toggle-icon
+      background-image: url('./assets/images/nav/nav-toggle-white.png')
+      width: 28px
+      height: 25px
+      float: right
+      margin-left: 8px
+
+    img
+      margin-left: 10px
+
+  .header-search
+    margin-right: 20px
+    margin-top: 25px
+    border-style: none
+    width: 240px
+    height: 40px
+    position: relative
+    float: right
+    +forMobile
+      display: none
+    #search-bg
+      background: #CCC
+      filter: alpha(opacity = 15)
+      /* IE
+      -moz-opacity: 0.15
+      /* Mozilla
+      opacity: 0.15
+      /* CSS3
+      position: absolute
+      top: 0
+      left: 0
+      height: 40px
+      width: 0px
+    #search
+      border-style: none
+      background: transparent
+      color: white
+      position: absolute
+      top: 8px
+      left: 10px
+      opacity: 0
+      visibility: hidden
+    .nav-search span
+      width: 28px
+      height: 25px
+      background-image: url("./assets/images/nav/search-icon-white.png")
+      position: absolute
+      right: 0px
+      top: 0px
+
+// Gradient is applied to it's own element because overflow visible is not honored by IE when filter is present
+.navbar-inner
+  height: $navbarHeight
+  margin: auto 5px
+  overflow: hidden
+
+body.open-nav
+  .navbar-header
+    +transition-property(transform)
+    +transition-duration($panelTransitionDuration)
+    +transform(translate3d($navMenuTransform,0,0))
+    +forMobile
+      +transform(translate3d($navMenuMobileTransform,0,0))
+
+// Override the default collapsed state
+.nav-collapse.collapse
+  height: auto
+  display: block
+  position: fixed
+  display: block
+  top: 0
+  right: 0
+  height: 100%
+  overflow-x: hidden
+  overflow-y: scroll
+  background: none
+  left: auto
+  background-color: $visaBlack
+  +transform(translate3d($navMenuWidthDesktop,0,0))
+  +transition-property(transform)
+  +forMobile
+    +transform(translate3d($navMenuWidthMobile,0,0))
+
+
+// Fixes for desktop scrollbars
+html.scrollbarwidth
+  .nav-collapse.collapse
+    +transform(translate3d($navMenuWidthDesktopWithScrollbarsMac,0,0))
+    +transition-property(transform)
+
+html.scrollbarwidth.os-windows
+  .nav-collapse.collapse
+    +transform(translate3d($navMenuWidthDesktopWithScrollbarsWindows,0,0))
+    +transition-property(transform)
+
+html.scrollbarwidth.os-windows.browser-chrome
+  body.open-nav
+    .navbar-header
+      +transition-property(transform)
+      +transition-duration($panelTransitionDuration)
+      +transform(translate3d(($navMenuTransform - 2),0,0))
+
+// Brand, links, text, and buttons
+.navbar
+  color: $navbarText
+  // Hover and active states
+  .brand:hover
+    text-decoration: none
+  // Website or project name
+
+  // Plain text in topbar
+  .navbar-text
+    line-height: $navbarHeight
+    margin-bottom: 0
+  .btn,
+  .btn-group
+    +navbarVerticalAlign(30px)
+    // Vertically center in navbar
+  .btn-group .btn
+    margin: 0
+
+
+// NAVIGATION
+// ----------
+.nav-container
+  left: 0
+
+.navbar .nav
+  position: relative
+  display: block
+  float: left
+  margin: 0 10px 0 0
+  &.secondary
+    display: none
+
+// Links
+$navElementHeight: 11px
+.navbar
+  .nav
+    a
+      color: $visaWhite
+      cursor: pointer
+      font-size: 18px
+      padding-top: 20px
+      padding-bottom: 20px
+      &.nav-link
+        padding-left: 35px
+        font-family: "Myriad Light" !important
+        font-size: 22px
+        +forMobile
+          padding-left: 20px
+          width: 232px
+        span.nav-breadbrumb-icon
+          background-image: url('./assets/images/nav/breadcrumb-icon-gray.png')
+          width: 24px
+          height: 24px
+          float: left
+          margin-left: 9px
+          margin-right: 5px
+          display: none
+    > li
+      background-color: $visaBlack
+      &.top-level-title
+        padding-top: 80px
+        cursor: default !important
+        span
+          padding-left: 35px
+          padding-bottom: 20px
+          font-family: $fontFamilyLight
+          font-size: 22px
+          display: block
+      > ul.subnav
+        float: none
+        height: 0px
+        padding-top: 0px !important
+        padding-left: 0px !important
+        border-left: none
+        overflow: hidden
+        background-color: $visaGreyMedium
+        float: none
+        margin-left: 0px
+        padding-left: 0px !important
+        > li
+          border-top: 1px solid $visaBlackDark
+          border-bottom: none
+          background-color: $visaGreyDark
+          &.current-primary
+            border-bottom-color: $visaGreyDark
+            > a.expand
+              background-image: url('./assets/images/nav/nav-expand-icon.png')
+              &.open
+                background-image: url('./assets/images/nav/nav-collapse-icon.png')
+                background-color: $visaGreyDark
+            > ul
+              > li
+                background-color: $visaGreyMedDark
+          a.nav-link
+            font-size: 17px
+            padding-top: 25px
+        &.closed
+          border-bottom: none
+          border-left: none
+        &.subnav
+          height: 0px
+        &.level-2
+          > li
+            background-color: $visaGreyMedDark
+            &.current-primary
+              background-color: $visaGreyDark
+        &.level-3
+          > li
+            background-color: $visaGreyMedDark
+            &.current-primary
+              background-color: $visaGreyDark
+    &.main > li
+      // Vertically center the text given $navbarHeight
+      margin: 0
+      float: left
+      display: block
+      font-size: 16px
+      cursor: pointer
+      > a
+        line-height: 1
+        display: inline-block
+        font-weight: normal
+        text-decoration: none
+        border-bottom: 1px solid rgba(0, 0, 0, 0)
+        float: left
+        width: 318px
+        background: none
+        &.expand
+          float: right
+          width: 60px
+          height: 63px
+          cursor: pointer
+          background-image: url('./assets/images/nav/nav-expand-icon.png')
+          background-repeat: no-repeat
+          background-position: center
+          border-left: 1px $visaBlackDark solid
+          border-bottom: none
+          &.open
+            background-image: url('./assets/images/nav/nav-collapse-icon.png')
+            background-color: $visaGreyDark
+          &.hidden
+            display: none
+        span.karat
+          background-image: url('./assets/images/nav/karat-gray.png')
+          width: 9px
+          height: 10px
+          display: inline-block
+          margin-left: 8px
+          margin-top: -10px
+      &.breadcrumb
+        margin-bottom: 0px
+        background-color: $visaBlue
+        border-bottom: 2px $visaWhite solid
+        border-radius: 0px
+        line-height: 26px
+        font-size: 32px
+        padding-top: 35px
+        padding-left: 35px
+        height: 92px
+        cursor: pointer
+        z-index: 10
+        font-family: "Myriad Light" !important
+        +forMobile
+          padding-left: 20px
+        span.white-up
+          background-image: url('./assets/images/nav/breadcrumb-icon-white.png')
+          width: 24px
+          height: 24px
+          float: left
+          margin-right: 10px
+
+
+      &.with-drop-down
+        a
+          margin-right: 8px
+        .divider-vertical
+          margin-right: 32px
+
+    &.secondary > li
+      margin-bottom: 8px
+
+// Normal / Active
+.nav
+  > li
+    > a
+      $experimental-support-for-svg: true
+      +transition(background 0.15s linear, color 0.15s linear, border-bottom 0.15s linear)
+
+  // Active nav items
+  &.main .active
+    height: auto !important
+    background-color: $visaBlue !important
+  &.auto-height
+    height: auto !important
+    > a
+      text-decoration: none
+
+// Normal / Active
+body.default-nav-mobile .nav
+  // Active nav items
+  &.main .active > a,
+    border-left: 2px solid $visaBlueLight
+    background-image: none
+    border-bottom: none
+    padding: 0 0 0 13px
+
+.navbar .nav.main
+  width: $navMenuWidthDesktop
+  margin: 0
+  border-left: 1px $visaGreyMedium solid
+  +forMobile
+    width: $navMenuWidthMobile
+  > li
+    display: block
+    float: none
+    line-height: 12px
+    font-size: 16px
+    border-bottom: 1px $visaBlackDark solid
+  li
+    font-size: 18px
+    border-left: none
+    &.sub-breadcrumb
+      background-color: $visaBlack !important
+      border-bottom: 1px $visaGreyMedium solid
+      > a
+        color: $visaGreyMediumDark !important
+        padding-left: 25px !important
+        background-repeat: no-repeat
+        font-size: 17px
+        line-height: 26px
+        span.karat
+          display: none
+        span.nav-breadbrumb-icon
+          display: inline-block
+    &.about-nav
+      a.nav-link
+        font-size: 18px
+        padding-top: 24px
+    &.current-page
+      background-color: $visaBlue !important
+
+  &.primary-nav
+    overflow: auto
+    border-left: none
+
+html.no-cssanimations
+  body.open-nav
+    header > .container,
+    > .container
+      left: -378px
+  .nav-collapse.collapse
+    // Fix for IE9
+    right: -395px
+
+// HEADER VARIATIONS
+// Transparent blue header
+body.transparent-blue-header
+  .navbar
+    button
+      color: $visaBlue
+    .navbar-header
+      background: none
+      .navbar-toggle
+        span.toggle-icon
+          background-image: url('./assets/images/nav/nav-toggle-blue.png')
+      .nav-search
+        span
+          background-image: url('./assets/images/nav/search-icon-blue.png')
+  > .container
+    top: -111px
+  span#visa-header-logo
+    background-image: url('./assets/images/nav/visa-logo-blue.png')
+    +forDesktop
+      background-image: url('./assets/images/nav/visa-logo-blue-desktop.png')
+
+
+// Transparent white header
+body.transparent-white-header
+  .navbar
+    button
+      color: $visaWhite
+    .navbar-header
+      background: none
+      .navbar-toggle
+        span.toggle-icon
+          background-image: url('./assets/images/nav/nav-toggle-white.png')
+      .nav-search
+        span
+          background-image: url('./assets/images/nav/search-icon-white.png')
+  > .container
+    top: -111px
+
+body.template-a
+  .navbar
+    .navbar-header
+      .navbar-header-inner
+        max-width: auto
+

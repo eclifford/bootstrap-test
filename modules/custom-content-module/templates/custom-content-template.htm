@@ -1,0 +1,27 @@
+<script type="text/template" id="section-tmpl">
+    <div class="row nested-no-max-width {{background}}">
+      <div class="pinched-row">
+        <div class="col-lg-12 col-md-12 col-sm-12 full-content cell">
+          <h2>{{{headline}}}</h2>
+          {{{full-bleed-html}}}
+          {{#full-bleed-copy}}
+            <p>{{{.}}}</p>
+          {{/full-bleed-copy}}
+        </div>
+      </div>
+
+      <div class="pinched-row two-wide">
+        <div class="col-lg-6 col-md-6 col-sm-6 cell">
+          {{#column-one-copy}}
+            <p>{{{.}}}</p>
+          {{/column-one-copy}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 cell">
+          {{#column-two-copy}}
+            <p>{{{.}}}</p>
+          {{/column-two-copy}}
+        </div>
+      </div>
+    </div>
+</script>
+

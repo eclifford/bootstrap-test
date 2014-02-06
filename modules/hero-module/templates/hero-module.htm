@@ -1,0 +1,46 @@
+<script type="text/template" id="hero-module-tmpl">
+    <div class="module-body">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+          {{#module-data}}
+          <div class="item" data-src-base="{{media-url-data}}">
+            <figure class="fixed-ratio"></figure>
+
+          </div>
+          {{/module-data}}
+        </div>
+        <div class="video-cta">
+          <a href="#" class="btn-video-cta">
+            <h2>{{intro-headline}}</h2>
+            <h3>{{intro-subheadline}} <span class="video-cta-arrow"></span></h3>
+          </a>
+        </div>
+        <div class="hero-video-player" id="hero-video">
+          <video id="player" width="100%" height="100%" class="mejs-player">
+            <source src="{{video-url}}.mp4" type="video/mp4" title="mp4">
+            <source src="{{video-url}}.ogv" type="video/ogg" title="ogg">
+          </video>
+        </div>
+        <div class="hero-video-endframe" id="hero-endframe">
+          <div class="hero-endframe-cta">
+            <h2>{{endframe-headline}}</h2>
+            <h3>{{endframe-subheadline}}</h3>
+            <ul class="first">
+              {{#endframe-first-col}}
+              <li><a href="{{endframe-link-url}}">{{endframe-link-title}}</a></li>
+              {{/endframe-first-col}}
+            </ul>
+            <ul>
+              {{#endframe-second-col}}
+              <li><a href="{{endframe-link-url}}">{{endframe-link-title}}</a></li>
+              {{/endframe-second-col}}
+            </ul>
+            <br>
+            <a href="#" class="btn-replay" id="hero-video-replay">Replay Video</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</script>

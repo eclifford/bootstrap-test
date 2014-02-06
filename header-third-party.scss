@@ -1,0 +1,19 @@
+// Compiles the sass needed for third parties
+
+/* base imports */
+@import "vendor/bower_components/sass-bootstrap/lib/variables";
+@import "vendor/bower_components/sass-bootstrap/lib/mixins";
+//@import 'vendor/bower_components/sass-bootstrap/lib/navbar';
+
+@import 'compass';
+
+// main visa vars
+@import 'assets/styles/mixins';
+@import 'assets/styles/variables';
+
+// import mixins AFTER compass
+@import 'assets/styles/mixins';
+
+// Modules
+@import 'modules/header-module/header-third-party';
+

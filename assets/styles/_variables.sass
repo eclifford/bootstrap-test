@@ -1,0 +1,245 @@
+// Variables to customize the look and feel of Bootstrap
+// -----------------------------------------------------
+
+// GLOBAL VALUES
+// -------------
+
+// Visa Colors (these are the only approved colors that may be used in the site)
+// -----------------------------------------------------------------------------
+$visaBlue: #1a1f71 !default
+$visaBlueLight: #0065b2 !default
+
+$visaGold: #f7b600 !default
+$visaGoldDark: #ed8b00 !default
+$visaGoldMedium: #f2ae4c !default
+$visaGoldLight: #f9c533 !default
+
+$visaWhite: white !default
+$visaBlack: #2c2c2c !default
+$visaBlackDark: #212121 !default
+
+$visaGreyDark: #403f3f !default
+$visaGreyMedDark: #585858 !default
+$visaGreyMediumDark: #727272 !default
+$visaGreyMedium: #75787b !default
+$visaGreyMedLight: #999999 !default
+$visaGreyLight: #dedddd !default
+$visaGreyPale: #f0efef !default
+$visaGreyPalest: #f1f1f2 !default
+
+// Vertical Spacing
+// Used to space out elements vertically, values taken from designs
+// -------------------------
+
+$mobileVerticalSpaceStandard: 40px
+
+$tabletVerticalSpaceStandard: 70px
+
+$desktopVerticalSpaceStandard: 80px
+
+// Border
+// -------------------------
+$borderStandard: 2px solid $visaGreyLight
+
+// Scaffolding
+// -------------------------
+$bodyBackground: $visaWhite !default
+$textColor: $visaBlack !default
+
+// Links
+// -------------------------
+$linkColor: $visaBlack !default
+$linkColorHover: $visaBlueLight !default
+$linkColorFocus: false
+$linkColorActive: false
+$linkColorVisited: false
+
+// Typography
+// -------------------------
+$baseFontSize: 12px !default
+$baseLineHeight: 18px !default
+$fontFamilyRegular: 'Myriad Regular', 'PT Sans Regular', Helvetica, Arial, sans-serif
+$fontFamilyLight: 'Myriad Light', 'PT Sans Narrow Regular', Helvetica, Arial, sans-serif
+$fontFamilyBold: 'Myriad Bold', 'PT Sans Narrow Bold', Helvetica, Arial, sans-serif
+
+// Tables
+// -------------------------
+$tableBackground: transparent !default
+
+// overall background-color
+$tableBackgroundAccent: $visaGreyLight !default
+
+// for striping
+$tableBackgroundHover: $visaGreyPale !default
+
+// for hover
+$tableBorder: $visaGreyPale !default
+
+// table and cell border
+
+// Compass sprites
+$global-sprite-dimensions: true
+
+// Forms
+// -------------------------
+$inputBackground: $visaWhite !default
+$inputBorder: #cccccc !default
+$inputBorderRadius: 3px !default
+$inputDisabledBackground: $visaGreyLight !default
+$inputDisabledColor: $visaBlack !default
+$inputPlaceholder: #cccccc !default
+$formActionsBackground: $visaGreyPale !default
+
+// Dropdowns
+// -------------------------
+$dropdownBackground: $visaWhite !default
+$dropdownBorder: $visaBlack !default
+$dropdownLinkColor: $visaGreyDark !default
+$dropdownLinkColorHover: $visaWhite !default
+$dropdownLinkBackgroundHover: $linkColor !default
+
+// COMPONENT VARIABLES
+// --------------------------
+
+// Z-index master list
+// --------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+$zindexDropdown: 1000 !default
+$zindexPopover: 1010 !default
+$zindexTooltip: 1020 !default
+$zindexFixedNavbar: 1030 !default
+$zindexModalBackdrop: 1040 !default
+$zindexModal: 1050 !default
+
+// Input placeholder text color
+// --------------------------
+$placeholderText: $visaGreyLight !default
+
+// Hr border color
+// --------------------------
+$hrBorder: $visaGreyPale !default
+
+//
+// --------------------------
+$panelTransitionDuration: 0.3s
+$panelTransitionEase: ease-in-out
+
+// Navbar
+// --------------------------
+$navbarHeight: 75px !default
+$navbarHeightSmall: 48px !default
+$navbarBackground: $visaBlueLight!default
+$navbarBackgroundHighlight: $visaBlue !default
+
+$navbarText: $visaWhite !default
+$navbarLinkColor: $visaGreyDark !default
+$navbarLinkColorHover: $visaBlack !default
+$navbarLinkColorActive: $navbarLinkColorHover !default
+$navbarLinkBackgroundHover: transparent !default
+$navbarLinkBackgroundActive: $navbarLinkBackgroundHover !default
+
+$navbarSearchBackground: lighten($navbarBackground, 25%) !default
+$navbarSearchBackgroundFocus: $visaWhite !default
+$navbarSearchBorder: darken($navbarSearchBackground, 30%) !default
+$navbarSearchPlaceholderColor: #cccccc !default
+$navbarBrandColor: $visaWhite !default
+
+// Mac OS > Without scrollbars
+$navMenuWidthDesktop: 378px !default
+// Mac OS > With scrollbars
+$navMenuWidthDesktopWithScrollbarsMac: 393px !default
+// Windows OS > With scrollbars
+$navMenuWidthDesktopWithScrollbarsWindows: 395px !default
+
+$navMenuWidthMobile: 293px !default
+
+// Form states and alerts
+// -------------------------
+$warningText: #c09853 !default
+$warningBackground: #fcf8e3 !default
+$warningBorder: darken(adjust-hue($warningBackground, -10), 3%) !default
+
+$errorText: #b94a48 !default
+$errorBackground: #f2dede !default
+$errorBorder: $visaBlueLight !default
+
+$successText: #468847 !default
+$successBackground: #dff0d8 !default
+$successBorder: darken(adjust-hue($successBackground, -10), 5%) !default
+
+$infoText: #3a87ad !default
+$infoBackground: #d9edf7 !default
+$infoBorder: darken(adjust-hue($infoBackground, -10), 7%) !default
+
+// RESPONSIVE
+// -------------------------
+
+// Fluid so need percentage calculation
+// (24*7)+(23*2)+(13*2) = 240
+$breakA_min: 240px
+$breakA_total_columns: 12
+$breakA_column_width:  percentage(7px / $breakA_min)
+$breakA_gutter_width:  percentage(2px / $breakA_min)
+$breakA_grid_padding:  percentage(13px / $breakA_min)
+
+// Fluid so need percentage calculation
+// (24*15)+(23*4)+(14*2) = 480
+$breakB_min: 640px
+$breakB_total_columns: 12
+$breakB_column_width:  percentage(15px / $breakB_min)
+$breakB_gutter_width:  percentage(4px / $breakB_min)
+$breakB_grid_padding:  percentage(14px / $breakB_min)
+
+// (24*22)+(23*8)+(29*2) = 768
+$breakC_min: 768px
+$breakC_total_columns: 12
+$breakC_column_width:  22px
+$breakC_gutter_width:  8px
+$breakC_grid_padding:  28px
+
+// (24*30)+(23*10)+(37*2) = 1024
+$breakD_min: 1024px
+$breakD_total_columns: 12
+$breakD_column_width:  30px
+$breakD_gutter_width:  10px
+$breakD_grid_padding:  37px
+
+// (24*38)+(23*12)+(46*2) = 1280
+$breakE_min: 1280px
+$breakE_total_columns: 12
+$breakE_column_width:  38px
+$breakE_gutter_width:  12px
+$breakE_grid_padding:  46px
+
+// (24*44)+(23*12)+(54*2) = 1440
+$breakF_min: 1440px
+$breakF_total_columns: 24
+$breakF_column_width:  44px
+$breakF_gutter_width:  12px
+$breakF_grid_padding:  54px
+
+// GRID
+// --------------------------
+
+// Susy Grid
+$base-font-size: 16px
+$total-columns: $breakD_total_columns
+$column-width: $breakD_column_width
+$gutter-width: $breakD_gutter_width
+$grid-padding: $breakD_grid_padding
+$grid-background-column-color: rgba(0,126,255,.1)
+$container-width: $breakD_min
+$legacy-support-for-ie: true
+
+// Default 960px grid
+// --------------------------
+$gridColumns: $total-columns !default
+$gridColumnWidth: $column-width !default
+$gridGutterWidth: $gutter-width !default
+$gridRowWidth: $gridColumns * $gridColumnWidth + $gridGutterWidth * ($gridColumns - 1) !default
+
+// Fluid grid
+// --------------------------
+// $fluidGridColumnWidth:    6.382978723% !default;
+// $fluidGridGutterWidth:    2.127659574% !default;

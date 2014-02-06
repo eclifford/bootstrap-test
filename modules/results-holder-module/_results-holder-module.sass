@@ -1,0 +1,68 @@
+.results-filter-holder
+  background-color: $visaWhite !important
+  .filter-content-overlay
+    display: none
+
+.results-cell-holder
+  +forMobile
+    border-bottom: $borderStandard
+
+.results-container
+  .results-row
+    background-color: $visaWhite
+    border-bottom: $borderStandard
+    margin: 0 auto !important
+    +forMobile
+      margin-right: 0px
+      border-bottom: none
+    &.empty
+      .results-module
+        border-bottom: none
+
+    .inner-row
+      display: table
+      font-size: 0
+      +forMobile
+        width: 100%
+
+    .results-cell
+      width: 49.895397%
+      vertical-align: top
+      float: none
+      display: table-cell
+      +forTablet
+        margin-right: 0 !important
+        display: inline-block
+
+      +forMobile
+        width: 100%
+        border-bottom: $borderStandard
+
+      .results-module
+        padding: 82px 10%
+        +forTablet
+          padding-top: $tabletVerticalSpaceStandard
+          padding-bottom: $tabletVerticalSpaceStandard
+        +forMobile
+          padding: $mobileVerticalSpaceStandard 12.5%
+        +forDesktop
+          padding-right: 17.190776%
+
+      &.results-cell-0
+        border-right: $borderStandard
+        +forMobile
+          border-right: none
+        .results-module
+          +forTablet
+            padding-left: 0
+
+      &.results-cell-1
+        .results-module
+          padding-left: 17.190776%
+          +forDesktop
+            padding-right: 10%
+          +forMobile
+            padding: $mobileVerticalSpaceStandard 12.5%
+          +forTablet
+            padding-right: 0
+            padding-left: 10%

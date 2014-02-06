@@ -1,0 +1,130 @@
+// NAVBAR (FIXED AND STATIC)
+// -------------------------
+
+$logoHeight: 25px
+$navMenuTransform: -1 * $navMenuWidthDesktop
+$navMenuMobileTransform: -1 * $navMenuWidthDesktop
+
+header
+  .container
+    width: auto !important
+
+
+// COMMON STYLES
+// -------------
+.navbar
+  // Fix for IE7's bad z-indexing so dropdowns don't appear below content that follows the navbar
+  *position: relative
+  *z-index: 2
+  overflow: visible
+  border: none
+  background: none
+  > .container
+    padding: 0px
+  > .container .navbar-brand
+    margin-left: 35px
+    margin-top: 32px
+    padding: 0px
+
+  .nav-container,
+  .navbar-header
+    +gradient-horizontal($navbarBackgroundHighlight, $navbarBackground)
+    +transition-property(transform)
+    +transition-duration($panelTransitionDuration)
+    +transition-timing-function($panelTransitionEase)
+    +backface-visibility(false)
+    height: 90px
+    button
+      margin-top: 32px
+      color: $visaWhite
+
+  .navbar-header
+    float: none
+
+// Gradient is applied to it's own element because overflow visible is not honored by IE when filter is present
+.navbar-inner
+  height: $navbarHeight
+  margin: auto 5px
+  overflow: hidden
+
+
+// Override the default collapsed state
+.nav-collapse.collapse
+  height: auto
+  display: block
+  position: fixed
+  display: block
+  top: 0
+  right: 0
+  height: 100%
+  overflow-x: hidden
+  overflow-y: scroll
+  background: none
+  left: auto
+  background-color: $visaGreyMedium
+  +transform(translate3d($navMenuWidthDesktop,0,0))
+  +transition-property(transform)
+  +forMobile
+    +transform(translate3d($navMenuWidthMobile,0,0))
+// Brand, links, text, and buttons
+.navbar
+  color: $navbarText
+  // Hover and active states
+  .brand:hover
+    text-decoration: none
+  // Website or project name
+
+  // Plain text in topbar
+  .navbar-text
+    line-height: $navbarHeight
+    margin-bottom: 0
+  .btn,
+  .btn-group
+    +navbarVerticalAlign(30px)
+    // Vertically center in navbar
+  .btn-group .btn
+    margin: 0
+
+
+// NAVIGATION
+// ----------
+.nav-container
+  left: 0
+
+.navbar .nav
+  position: relative
+  display: block
+  float: left
+  margin: 0 10px 0 0
+  &.secondary
+    display: none
+
+// Links
+$navElementHeight: 11px
+.navbar
+  .nav
+    a
+      color: $visaWhite
+      cursor: pointer
+      font-size: 18px
+      padding-top: 20px
+      padding-bottom: 20px
+      &.nav-link
+        padding-left: 35px
+
+
+// Normal / Active
+body.default-nav-mobile .nav
+  // Active nav items
+  &.main .active > a,
+    border-left: 2px solid $visaBlueLight
+    background-image: none
+    border-bottom: none
+    padding: 0 0 0 13px
+
+.navbar .nav.main
+  width: $navMenuWidthDesktop
+  margin: 0
+  border-left: 1px $visaGreyMedium solid
+  +forMobile
+    width: $navMenuWidthMobile

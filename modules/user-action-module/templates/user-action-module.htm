@@ -1,0 +1,35 @@
+<script type="text/template" id="user-action-module-tmpl">
+  <div class="module-body">
+    <div class="inner-row">
+      <div class="ua-module">
+        <div class="ua-form">
+          <div class="btn-group">
+            <span class="ua-label">{{label-data}}</span>
+            <div class="btn-wrap">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="ua-value">{{default-data}}</span>
+                <span class="caret"></span>
+              </button>
+            </div>
+            <ul class="dropdown-menu" role="menu">
+              {{#module-data}}
+              <li><a href="#" data-category-index="{{category-index}}">{{category-name-data}}</a></li>
+              {{/module-data}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ua-results">
+      <ul>
+        <li class="result-hdr"><span class="result-title">Results <span class="result-close">Close</span></span></li>
+        {{#module-data}}
+        {{#sub-category-data}}
+        <li data-dropdown-index="{{dropdown-index}}"><a href="{{dropdown-url}}">{{dropdown-name}}</a></li>
+        {{/sub-category-data}}
+        {{/module-data}}
+      </ul>
+      <div class="ua-content-overlay"></div>
+    </div>
+  </div>
+</script>

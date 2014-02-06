@@ -1,0 +1,153 @@
+.sections-holder
+	border-top: $borderStandard
+
+	.row.nested-no-max-width
+		border-bottom: $borderStandard
+		+forMobile
+			border-bottom: none
+		.inner-row
+			font-size: 0
+
+.grid-container
+
+	.custom-margin
+
+		.inner-row
+			display: table
+			+forMobile
+				width: 100%
+
+			.sections-cell
+				border-right: $borderStandard
+				vertical-align: top
+				float: none
+				display: table-cell
+				+forTablet
+					margin-right: 0 !important
+					display: inline-block
+				+forMobile
+					border-right: none
+					width: 100% !important
+
+				&.sections-cell-0
+					.sections-module
+						+forTablet
+							padding-left: 0
+						+forMobile
+							padding-left: 12.5%
+
+			.sections-module
+				padding: 0 10% 73px
+				+forTablet
+					padding-bottom: 53px
+				+forMobile
+					padding-left: 12.5%
+					padding-right: 12.5%
+					width: 100%
+					padding-bottom: 40px
+					border-bottom: $borderStandard
+
+			&.three-wide
+				.sections-cell
+					width: 34.518828%
+
+					&.sections-cell-0,
+					&.sections-cell-2
+						width: 32.531381%
+
+					&.sections-cell-0
+						.sections-module
+							padding-left: 4.2424242%
+
+					&.sections-cell-2
+						border-right: none
+						.sections-module
+							padding-right: 4.2424242%
+							+forTablet
+								padding-right: 0
+							+forMobile
+								padding-right: 12.5%
+
+		.two-wide
+			.sections-cell
+				width: 49.895397%
+
+			.sections-cell-0
+				border-right: $borderStandard
+				.sections-module
+					padding-right: 17.190776%
+					+forTablet
+						padding-right: 10%
+
+			.sections-cell-1
+				border-right: none
+				.sections-module
+					padding-left: 17.190776%
+					+forTablet
+						padding-left: 10%
+						padding-right: 0
+
+
+
+.sections-module
+	+forMobile
+		padding-bottom: 30px
+
+	.section-header
+		height: 94px
+		position: relative
+		+forTablet
+			height: 70px
+		+forMobile
+			height: 57px
+
+		h2
+			position: absolute
+			bottom: 0
+
+	.dropdown
+		width: 100% !important
+		margin-bottom: 0
+		font-size: 14px
+
+		.fancy-select
+			width: 100%
+
+	h2
+		font-weight: bold
+		margin-top: 0px
+		color: $visaBlue
+		font-weight: normal
+		font-family: $fontFamilyLight
+		line-height: 1.2em
+	&.empty
+		+forMobile
+			display: none
+
+	p
+		font-weight: normal
+		font-family: $fontFamilyLight
+		font-size: 18px
+		margin-top: 8px
+		color: $visaGreyMedium
+		line-height: 1.2em
+		+forDesktop
+			margin-top: 10px
+
+	.copy
+		position: relative
+		margin-bottom: 26px
+		+forTablet
+			margin-bottom: 25px
+		+forMobile
+			margin-bottom: 30px
+
+	.cta-stack
+		width: 100%
+		margin-top: 0px
+		padding: 0
+		+forMobile
+			margin-top: 0px
+		li
+			display: inline-block
+			margin-top: 15px

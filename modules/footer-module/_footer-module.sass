@@ -1,0 +1,138 @@
+footer
+	margin-top: 70px
+	font-family: $fontFamilyLight !important
+	.row
+		min-height: 1px !important
+		.inner-row
+			+forMobile
+				width: 100% !important
+		.visa-tagline
+			margin-bottom: 40px !important
+			+forMobile
+				width: 100% !important
+				padding-left: 34px
+				margin-bottom: 35px !important
+				margin-left: 0px !important
+			img
+				width: auto !important
+				padding-right: 0px
+			span
+				margin-left: 10px
+				font-weight: bold
+				color: $visaBlue
+				font-size: 14px
+				position: relative
+				top: -10px
+				+forMobile
+					font-size: 12px
+				+forDesktop
+					top: -12px
+				&#visa-footer-logo
+					background-image: url('./assets/images/nav/visa-logo-blue.png')
+					width: 81px
+					height: 27px
+					display: inline-block
+					top: 0
+					margin-left: 0px
+					+forDesktop
+						background-image: url('./assets/images/nav/visa-logo-blue-desktop.png')
+						width: 98px
+						height: 32px
+		.social-links-cell
+			+forMobile
+				border-top: $borderStandard
+				width: 100% !important
+				float: left
+				margin-left: 0px
+				margin-bottom: 35px
+				padding-top: 35px
+			.social-links
+				float: right
+				+forDesktop
+					padding-top: 5px
+				+forMobile
+					float: none
+					width: 75%
+					margin: 0 auto
+				span
+					height: 35px
+					display: inline-block
+					background-repeat: no-repeat
+					position: relative
+					top: 4px
+					&.facebook
+						background-image: url('./assets/images/footer/facebook.gif')
+						width: 10px
+					&.twitter
+						background-image: url('./assets/images/footer/twitter.gif')
+						width: 16px
+					&.tumblr
+						background-image: url('./assets/images/footer/tumblr.gif')
+						width: 11px
+					&.linkedin
+						background-image: url('./assets/images/footer/linkedin.gif')
+						width: 25px
+						top: 12px
+					&.youtube
+						background-image: url('./assets/images/footer/youtube.gif')
+						width: 25px
+				a
+					margin-right: 32px
+					&:last-child
+						margin-right: 0
+
+		.nav-list
+			+forMobile
+				width: 100% !important
+				margin-left: 0px
+				border-bottom: $borderStandard
+				li
+					display: none
+					&.list-title
+						display: block
+					.mobile-link
+						display: inline
+						float: right
+						margin-right: 0px
+						height: 24px
+						width: 24px
+						background: $visaWhite url('./assets/images/common/tab-plus-24x24.png') no-repeat 87.5% center
+		ul
+			margin-top: 35px
+			padding-left: 13px
+			list-style-type: none
+			+forMobile
+				padding-left: 0
+				margin-top: 45px
+				margin-left: 0px !important
+			&:first-child
+				padding-left: 0
+			&:last-child
+				padding-left: 16px
+			li
+				padding-bottom: 35px
+				+forMobile
+					width: 75%
+					margin: 0 auto
+				&.list-title
+					color: $visaGreyMedium
+					font-family: $fontFamilyBold
+					letter-spacing: 1px
+					+forMobile
+						cursor: pointer
+					.mobile-link
+						display: none
+				a,
+				a:hover,
+				a:active
+					color: $visaGreyMedium !important
+				a:hover
+					@include opacity(0.5)
+			&.open
+				li
+					display: block !important
+					.mobile-link
+						background-image: url('./assets/images/common/tab-minus-24x24.png') !important
+
+.footer-description
+	margin-top: 50px

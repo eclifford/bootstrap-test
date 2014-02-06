@@ -1,0 +1,92 @@
+// Layouts
+// Fixed-width and fluid (with sidebar) layouts
+// --------------------------------------------
+
+$navMenuTransform: -1 * $navMenuWidthDesktop
+$navMenuMobileTransform: -1 * $navMenuWidthMobile
+
+html,
+body
+  // Needed for mobile menu to properly hide content
+  overflow-x: hidden
+
+// Set the font for everything, overwrites bootstrap
+// body *
+
+
+// Container (centered, fixed-width layouts)
+body
+  > .container
+    position: static
+    left: 0
+    width: 100%
+    min-height: 100%
+    overflow-x: hidden
+    font-family: $fontFamilyRegular
+    // Adding this line will enable inertial scrolling
+    -webkit-overflow-scrolling: touch
+    background-color: $visaWhite
+    border-top: 1px solid $visaWhite
+    position: relative
+    padding: 0px
+    font-family: $fontFamilyRegular
+    left: 0
+    height: 100%
+    overflow-y: auto
+    z-index: 2
+    letter-spacing: 0.01em
+    +transition-property(transform)
+    +transition-duration($panelTransitionDuration)
+    +transition-timing-function($panelTransitionEase)
+
+
+  // When the mobile nav is open
+  &.open-nav
+    > .container
+      +transform(translate3d($navMenuTransform,0,0))
+      border-left: 1px solid $visaGreyPale
+      overflow-x: hidden
+      +forMobile
+        +transform(translate3d($navMenuMobileTransform,0,0))
+    &.default-nav-mobile
+      > .container
+        +transform(translate3d($navMenuWidthDesktop,0,0))
+        border-left: 1px solid $visaGreyPale
+        overflow-x: hidden
+        +forMobile
+          +transform(translate3d($navMenuWidthMobile,0,0))
+  &.transparent-blue-header,
+  &.transparent-white-header
+    padding: 0px
+    > .container
+      top: 0px
+
+// Navigation is mobile for all sizes
+//
+body.default-nav-mobile
+  > .container
+    border-top: 1px solid $visaWhite
+    position: relative
+    left: 0
+    height: 100%
+    overflow-y: scroll
+    z-index: 2
+    +transition-property(transform)
+    +transition-duration($panelTransitionDuration)
+    +transition-timing-function($panelTransitionEase)
+
+  // When the mobile nav is open
+  &.open-nav
+    > .container
+      +transform(translate3d($navMenuWidthDesktop,0,0))
+      border-left: 1px solid $visaGreyPale
+      overflow-x: hidden
+      +forMobile
+        +transform(translate3d($navMenuMobileTransform,0,0))
+    &.default-nav-mobile
+      > .container
+        +transform(translate3d($navMenuWidthDesktop,0,0))
+        border-left: 1px solid $visaGreyPale
+        overflow-x: hidden
+        +forMobile
+          +transform(translate3d($navMenuWidthMobile,0,0))

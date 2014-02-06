@@ -1,0 +1,399 @@
+@import './common/mejs'
+
+.carousel-fade .carousel-inner .item
+  opacity: 0
+  -webkit-transition-property: opacity
+  -moz-transition-property: opacity
+  -o-transition-property: opacity
+  transition-property: opacity
+.carousel-fade .carousel-inner .active
+  opacity: 1
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right
+  left: 0
+  opacity: 0
+  z-index: 1
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right
+  opacity: 1
+
+#hero-carousel.carousel
+  background: #2c2c2c
+  max-height: 616px
+  .carousel-inner
+    max-height: 616px
+    .item
+      left: 0
+      width: 100%
+      background-position: center center
+      background-repeat: no-repeat
+      +transition(.7s ease-in-out opacity)
+      overflow: hidden
+      +forBreakA
+        height: auto
+        min-height: 238px
+        background-size: cover
+      +forBreakB
+        height: auto
+        background-size: cover
+      +forBreakC
+        height: auto
+        background-size: cover
+      +forBreakD
+        height: auto
+        max-height: 616px
+        background-size: cover
+      +forBreakE
+        height: 616px
+        background-size: cover
+      .fixed-ratio
+        display: block
+        background: url('./assets/images/hero/hero-bg-fade.png') repeat-x left bottom
+        background-size: 100% 65%
+        +forBreakA
+          width: 100%
+          display: block
+          padding-top: 102%
+        +forBreakB
+          display: block
+          width: 100%
+          padding-top: 73.4%
+          background: none
+        +forBreakC
+          display: block
+          width: 100%
+          padding-top: 49.5%
+          background: none
+        +forBreakD
+          display: block
+          width: 100%
+          padding-top: 49.5%
+          background: none
+        +forBreakE
+          display: block
+          width: 100%
+          height: 616px
+          background: none
+      img
+        display: none
+    .scalable
+      width: 100%
+      height: auto
+    .carousel-caption
+      display: none
+      left: 10%
+      right: 10%
+      h2
+        font-family: $fontFamilyLight
+        color: $uiWhite
+        letter-spacing: 1px
+        small
+          font-family: inherit
+          color: inherit
+          +forMobile
+            font-size: 20px
+          +forTablet
+            font-size: 32px
+          +forDesktop
+            font-size: 36px
+          +forBreakA
+            font-size: 17px
+        +forMobile
+          font-size: 24px
+          line-height: 30px
+        +forTablet
+          font-size: 38px
+          line-height: 44px
+        +forDesktop
+          font-size: 42px
+          line-height: 48px
+        +forBreakA
+          font-size: 20px
+          line-height: 23px
+    .left.carousel-control, .right.carousel-control
+      display: none
+    .carousel-indicators
+      bottom: 10px
+      @include opacity(.5)
+
+  .video-cta
+    position: absolute
+    overflow: hidden
+    width: 100%
+    height: 100%
+    text-align: center
+    bottom: 0
+    left: 0
+    z-index: 10
+    +forMobile
+      background: url('./assets/images/hero/hero-bg-fade.png') 0 100% repeat-x
+    .btn-video-cta
+      position: absolute
+      display: block
+      top: 42%
+      width: 100%
+      color: $uiWhite
+      h2
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2)
+        +forMobile
+          font-size: 24px
+          line-height: 20px
+        +forTablet
+          font-size: 46px
+          line-height: 30px
+        +forDesktop
+          font-size: 58px
+          line-height: 40px
+      h3
+        line-height: 55px
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2)
+        +forMobile
+          font-size: 20px
+          line-height: 36px
+        +forTablet
+          font-size: 26px
+        +forDesktop
+          font-size: 32px
+        .video-cta-arrow
+          position: relative
+          top: 14px
+          right: -5px
+          display: inline-block
+          color: $uiWhite
+          background: $visaGoldDark
+          background-color: rgba(247, 182, 0, .8)
+          +border-radius(50%)
+          text-indent: -9999px
+          cursor: pointer
+          background-repeat: no-repeat
+          background-position: 55% 50%
+          +transition($uiBackgroundColorTransition)
+          background-image: url('./assets/images/common/icon-play-28x41.png')
+          background-size: 14px 19px
+          +forMobile
+            display: none
+            top: 9px
+            width: 30px
+            height: 30px
+            background-size: 10px 14px
+          +forTablet
+            top: 12px
+            width: 40px
+            height: 40px
+            background-size: 12px 17px
+          +forDesktop
+            top: 14px
+            width: 45px
+            height: 45px
+            background-size: 14px 19px
+      &:hover
+        @include opacity(1)
+        text-decoration: none
+        h3
+          .video-cta-arrow
+            color: $uiWhite
+            background-color: rgba(247, 182, 0, 1)
+            text-decoration: none
+
+.hero-video-player
+  position: absolute
+  top: 0
+  left: 0
+  overflow: hidden
+  width: 100%
+  height: 100%
+  max-height: 616px
+  background: #2c2c2c
+  z-index: 100
+  display: none
+
+  .mejs-container
+    max-width: 1600px
+    max-height: 616px
+    background: #2c2c2c
+    margin: 0 auto !important
+    +forBreakE
+
+
+    .mejs-overlay-button
+      margin-left: -50px !important
+      position: relative
+      top: 50%
+      left: 50%
+      display: block
+      color: $uiWhite
+      background: $visaGoldDark
+      background-color: rgba(247, 182, 0, .8)
+      +border-radius(50%)
+      text-indent: -9999px
+      cursor: pointer
+      background-repeat: no-repeat
+      background-position: 55% 50%
+      +transition($uiBackgroundColorTransition)
+      width: 100px
+      height: 100px
+      margin-left: -50px
+      margin-top: -50px
+      background-image: url('./assets/images/common/icon-play-28x41.png')
+      background-size: 28px 41px
+      &:hover
+        color: $uiWhite
+        background-color: rgba(247, 182, 0, 1)
+        text-decoration: none
+    .mejs-layers
+      .mejs-overlay-loading
+        margin-top: -16px
+        margin-left: -16px
+        height: 32px
+        width: 32px
+        background: none
+        span
+          width: 32px
+          height: 32px
+          background: transparent url(./assets/images/common/icon-loading-32x32.gif) 50% 50% no-repeat
+
+    .mejs-controls
+      height: 10px
+      background: none
+      div
+        height: 10px
+      .mejs-time
+        display: none
+      .mejs-button
+        display: none
+      .mejs-time-rail
+        padding-top: 5px
+        span
+          +border-radius(0)
+        .mejs-time-buffering
+          background: none
+        .mejs-time-loaded
+          background: none
+        .mejs-time-total
+          background: none
+          margin: 0
+          .mejs-time-current
+            background: $uiWhite
+            @include opacity(.7)
+
+.hero-video-endframe
+  position: absolute
+  top: 0
+  left: 0
+  overflow: hidden
+  width: 100%
+  height: 100%
+  background: none
+  z-index: 100
+  display: none
+  .hero-endframe-cta
+    position: absolute
+    display: block
+    color: $uiWhite
+    text-align: center
+    +forMobile
+      display: none
+    +forTablet
+      top: 50%
+      margin-top: -153px
+      left: 50%
+      margin-left: -226px
+    +forDesktop
+      top: 50%
+      margin-top: -171px
+      left: 50%
+      margin-left: -285px
+    h2
+      color: $visaGold
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2)
+      +forMobile
+        font-size: 32px
+        line-height: 34px
+      +forTablet
+        font-size: 40px
+      +forDesktop
+        font-size: 46px
+        line-height: 66px
+    h3
+      line-height: 32px
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2)
+      margin-bottom: 32px
+      +forMobile
+        font-size: 16px
+      +forTablet
+        font-size: 20px
+      +forDesktop
+        font-size: 26px
+    ul
+      list-style: none
+      display: inline-block
+      text-align: right
+      &.first
+        padding-left: 0
+        +forMobile
+          margin-left: -23px
+        +forTablet
+          margin-left: -60px
+        +forDesktop
+          margin-left: -60px
+      li
+        font-size: 16px
+        line-height: 28px
+        margin-top: 4px
+        a
+          background-image: url('./assets/images/common/icon-arrow-right-white-36x36.png')
+          background-repeat: no-repeat
+          background-position: 98% 45%
+          background-size: 18px 18px
+          color: $uiWhite
+          text-align: right
+          padding: 10px 30px 10px 0
+
+    .btn-replay
+      display: inline-block
+      width: 43px
+      height: 36px
+      text-indent: -9999px
+      background-image: url('./assets/images/common/icon-replay-white-43x36.png')
+      background-size: 43px 36px
+      background-repeat: no-repeat
+      @include opacity(.7)
+      +transition(.3s ease-in-out opacity)
+      +forMobile
+        margin-top: 48px
+      +forTablet
+        margin-top: 30px
+      +forDesktop
+        margin-top: 30px
+      &:hover
+        @include opacity(1)
+  +forMobile
+  +forTablet
+    .hero-endframe-cta
+      h2
+        font-size: 40px
+
+
+
+.navbar-brand.olympic
+  position: relative
+#visa-header-logo-olympics
+  position: absolute
+  top: 0
+  left: 0
+  display: block
+  width: 182px
+  height: 48px
+  background-image: url('./assets/images/nav/visa-logo-white-olympics.png')
+  background-repeat: no-repeat
+  background-position: 100% 100%
+  background-size: 182px 48px
+  z-index: 2
+  +forTablet
+    width: 144px
+    height: 39px
+    background-size: 144px 39px
+  +forMobile
+    width: 144px
+    height: 39px
+    background-size: 144px 39px

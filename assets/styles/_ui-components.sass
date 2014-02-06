@@ -1,0 +1,558 @@
+// UI Components
+// Styling to customize the look and feel of Bootstrap components
+// --------------------------------------------------------------
+
+// Docs-specific styling
+// Gives a little more padding darker background for code examples
+// ---------------------------------------------------------------
+body > .container.bs-docs-container
+  background: #f8f8f8
+
+body .bs-docs-container #toc
+  padding: 0
+  margin: 0 0 9px 15px
+  list-style: none
+
+body .bs-docs-container .page-header
+  color: $visaGreyDark
+  border-bottom: 5px solid $visaGreyPale
+
+body .bs-docs-container .page-header h1 small
+  color: $visaGreyMedLight
+  font-size: 35%
+  margin-left: 5px
+
+body .bs-docs-container .page-header .lead
+  color: $visaGreyMedLight
+  margin-bottom: 0
+
+body .bs-docs-container .subhead
+  color: $visaBlueLight
+  margin-top: 35px
+  border-bottom: 2px solid $visaGreyLight
+
+body .bs-docs-container hr
+  border-top: 1px solid $visaGreyPale
+
+body .bs-docs-container section hr
+  margin: 18px 0 12px 0
+
+body .bs-docs-container .bs-example
+  font-family: $fontFamilyRegular
+  display: block
+  position: relative
+  padding: 50px 15px 22px 15px
+  background-color: #fafafa
+  border-color: #e5e5e5 #eee #eee
+  border-style: solid
+  margin: 0 0 -4px 0
+  background-color: #fff
+  border-width: 1px
+  border-color: #ddd
+  border-radius: 4px 4px 0 0
+
+body .bs-docs-container .bs-example:after
+  content: "Example"
+  position: absolute
+  top: 15px
+  left: 15px
+  font-size: 12px
+  font-weight: bold
+  color: #ccc
+  text-transform: uppercase
+  letter-spacing: 1px
+
+body .bs-docs-container .bs-example.video
+  padding-top: 0
+
+body .bs-docs-container .bs-docs-section h2
+  margin-bottom: 10px
+
+body .bs-docs-container .bs-docs-section h3
+  font-weight: 500
+  color: $visaGreyDark
+  margin-top: 12px
+
+body .bs-docs-container .bs-docs-section p
+  color: $visaGreyMedLight
+
+body .bs-docs-container pre
+  background: #eee
+body .bs-docs-container code.html, body .bs-docs-container code.html *
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace !important
+
+// UI Components-specific Variables
+// -------------------------
+$uiWhite: #fff
+$uiOpacityValue: 1
+$uiOpacityValueNone: 0
+$uiOpacityValueHover: 0.7
+$uiOpacityValueVideoBtn: 0.8
+$uiOpacityTransition: opacity 0.2s linear
+$uiColorTransition: color 0.2s linear
+$uiBackgroundTransition: background 0.2s linear
+$uiBackgroundColorTransition: background-color 0.2s linear
+$uiTextShadowTransition: text-shadow 0.2s ease-out
+$uiLeftTransition: left 0.6s ease-in-out
+
+a:hover
+  @include opacity($uiOpacityValueHover)
+  text-decoration: none
+
+// Links & Buttons
+// -------------------------
+// primary button
+.btn-primary
+  display: inline-block
+  color: $uiWhite
+  padding: 9px 14px
+  margin-right: 15px
+  background: $visaGold
+  +border-radius(2px)
+  cursor: pointer
+  white-space: nowrap
+  @include opacity($uiOpacityValue)
+  +transition($uiOpacityTransition)
+  font-family: $fontFamilyRegular
+  &:hover
+    color: $uiWhite
+    @include opacity($uiOpacityValueHover)
+    background: $visaGold
+    text-decoration: none
+  &.last
+    margin-right: none
+  &.disable
+    @include opacity(0.7)
+    cursor: default
+
+// secondary button
+.btn-secondary
+  color: $visaGreyMedium
+  padding: 10px 30px 10px 0
+  margin-right: 15px
+  font-size: inherit
+  background-image: url('./assets/images/common/icon-arrow-right-grey-36x36.png')
+  background-repeat: no-repeat
+  background-position: 98% 45%
+  background-size: 18px 18px
+  cursor: pointer
+  white-space: nowrap
+  @include opacity($uiOpacityValue)
+  +transition($uiOpacityTransition)
+  font-size: 14px
+  font-family: $fontFamilyRegular
+  &:hover
+    color: $visaGreyMedium
+    @include opacity($uiOpacityValueHover)
+    text-decoration: none
+  +forMobile
+    white-space: normal
+
+// secondary button: pdf download
+.btn-secondary.pdf
+  padding-right: 26px
+  background-image: url('./assets/images/common/icon-pdf-28x36.png')
+  background-size: 14px 18px
+  font-family: $fontFamilyRegular
+
+// secondary button: external link
+.btn-secondary.external-link
+  padding-right: 28px
+  background-image: url('./assets/images/common/icon-external-link-32x26.png')
+  background-size: 16px 13px
+  font-family: $fontFamilyRegular
+
+// video play button
+.btn-video-play
+  position: absolute
+  top: 50%
+  left: 50%
+  display: block
+  color: $uiWhite
+  background: $visaGoldDark
+  background-color: rgba(237, 139, 0, .8)
+  +border-radius(50%)
+  text-indent: -9999px
+  cursor: pointer
+  background-repeat: no-repeat
+  background-position: 55% 50%
+  +transition($uiBackgroundColorTransition)
+  width: 100px
+  height: 100px
+  margin-left: -50px
+  margin-top: -50px
+  background-image: url('./assets/images/common/icon-play-28x41.png')
+  background-size: 28px 41px
+  +forTablet
+    width: 74px
+    height: 74px
+    background-size: 20px 31px
+    margin-left: -37px
+    margin-top: -37px
+  &:hover
+    color: $uiWhite
+    background-color: rgba(237, 139, 0, 1)
+    text-decoration: none
+
+// Input Fields
+// -------------------------
+// Search
+.input-group
+  font-family: $fontFamilyLight
+  +border-radius(2px)
+  +transition($uiBackgroundTransition)
+  background: $visaGreyPale
+  .form-control
+    font-family: inherit
+    background: transparent
+    border: 0
+    +border-radius(0)
+    @include box-shadow(0 0 transparent)
+    &::-webkit-input-placeholder
+      color: #c8c8c8
+    &:-moz-placeholder
+      color: #999
+    &:-ms-input-placeholder
+      color: #999
+  .input-group-btn
+    .btn-default
+      width: 18px
+      height: 18px
+      margin-right: 10px
+      font-family: inherit
+      border: 0
+      padding: 0
+      +border-radius(0)
+      background-color: transparent
+      background-image: url('./assets/images/common/icon-arrow-right-grey-18x18.png')
+      background-repeat: no-repeat
+      background-position: 100% 45%
+      background-size: 18px 18px
+    .btn-default:active
+      @include box-shadow(0 0 transparent)
+  &:hover
+    background-color: #f6f5f5
+
+
+// Dropdown menus
+// -------------------------
+// Dropdown
+.dropdown
+  font-family: $fontFamilyLight
+  display: inline-block
+  margin: 0 3px 10px 0
+  +forMobile
+    width: 100%
+  +forTablet
+    width: 100%
+  +forDesktop
+    width: auto
+  .btn-group
+    width: 100%
+  .btn
+    font-family: $fontFamilyLight
+    width: 100%
+    min-width: 180px
+    width: 100%
+    padding: 10px 12px
+    font-size: inherit
+    line-height: 1.1
+    border-radius: 0
+    text-align: left
+  .btn:active, .btn.active
+    @include box-shadow(0 0 transparent)
+  .btn-default
+    color: $visaGreyMedLight
+    +transition($uiBackgroundTransition)
+    background-color: $visaGreyPale
+    border-color: transparent
+  .caret
+    position: relative
+    top: 4px
+    float: right
+    vertical-align: middle
+    border-top: 0 solid transparent
+    border-right: 0 solid transparent
+    border-left: 0 solid transparent
+    border-bottom: 0 solid transparent
+    background-repeat: no-repeat
+    top: 4px
+    width: 16px
+    height: 9px
+    @include opacity($uiOpacityValue)
+    +transition($uiOpacityTransition)
+    background-image: url('./assets/images/common/icon-arrow-down-grey-16x9.png')
+
+  .dropdown-menu
+    min-width: 180px
+    padding: 0
+    margin: 0
+    border: 0
+    background-color: $visaGreyPale
+    +border-radius(0)
+    @include box-shadow(0 0 transparent)
+    li
+      border-top: 1px solid #e9e9e9
+      a
+        font-family: $fontFamilyLight
+        padding: 10px 12px
+        line-height: 1.1
+        color: $visaGreyMedLight
+        +transition($uiBackgroundTransition)
+        &:hover
+          background-color: $visaGreyLight
+    +forMobile
+      width: 100%
+    +forTablet
+      width: 100%
+    +forDesktop
+      width: auto
+  &:hover
+    .btn
+      background-color: #f6f5f5
+    .caret
+      @include opacity($uiOpacityValueHover)
+
+// Dropdown Light Theme
+.dropdown.light
+  .btn-default
+    color: $visaGreyMedLight
+    background-color: $uiWhite
+  .caret
+    background-image: url('./assets/images/common/icon-arrow-down-grey-16x9.png')
+
+  .dropdown-menu
+    background-color: $uiWhite
+    li
+      border-top: 1px solid #e9e9e9
+      a
+        color: $visaGreyMedLight
+        &:hover
+          background-color: $visaGreyLight
+
+
+
+// Fancy select
+.fancy-select
+  position: relative
+  float: left
+  font-family: $fontFamilyLight
+  display: inline-block
+  margin: 0 6px 10px 0
+  +forMobile
+    width: 100%
+    font-size: 14px
+    margin-bottom: 12px
+  +forTablet
+    width: 100%
+  +forDesktop
+    width: auto
+  &.disabled
+    opacity: 0.5
+  select:focus + .trigger
+    &.open
+      box-shadow: none
+  .trigger
+    +border-radius(2px)
+    cursor: pointer
+    padding: 11px 12px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    position: relative
+    font-size: inherit
+    line-height: 1.1
+    color: $visaGreyMedLight
+    +transition($uiBackgroundTransition)
+    background-color: $visaGreyPale
+    border-color: transparent
+    width: 100%
+    min-width: 150px
+    font-size: inherit
+    +forMobile
+      font-size: 14px
+    &:after
+      content: ""
+      display: block
+      position: absolute
+      background-image: url('./assets/images/common/icon-arrow-down-grey-16x9.png')
+      width: 16px
+      height: 9px
+      top: 14px
+      right: 11px
+    &.open
+      box-shadow: none
+      background-color: #f6f5f5
+  ul.options
+    list-style: none
+    margin: 0
+    position: absolute
+    top: 35px
+    left: 0
+    visibility: hidden
+    opacity: 0
+    z-index: 50
+    overflow: auto
+    background-color: $visaGreyPale
+    width: 100%
+    min-width: 150px
+    padding: 0
+    &.open
+      visibility: visible
+      opacity: 1
+    li
+      border-top: 1px solid #e9e9e9
+      cursor: pointer
+      white-space: nowrap
+      background-color: $visaGreyPale
+      transition: all 150ms ease-out
+      padding: 11px 12px
+      line-height: 1.1
+      color: $visaGreyMedLight
+      +transition($uiBackgroundTransition)
+      &.selected
+        background-color: $visaGreyLight
+      &.hover
+        background-color: $visaGreyLight
+
+.bootstrap-select.light
+  .trigger
+    color: $visaGreyMedLight
+    background-color: $uiWhite
+
+  ul.options
+    top: 35px
+    background-color: $uiWhite
+    +transition($uiBackgroundTransition)
+    li
+      background-color: $uiWhite
+      border-top: 1px solid #e9e9e9
+      &.selected
+        background-color: $visaGreyLight
+      &.hover
+        background-color: $visaGreyLight
+
+// Carsouels
+// -------------------------
+// Home page carousel
+
+#hero-carousel.carousel
+  .item
+    left: 0 !important
+    opacity: 1
+    +transition(.7s ease-in-out opacity)
+    overflow: hidden
+  .active.left, .active.right
+    left: 0
+    opacity: 0
+    z-index: 2
+  .next
+    left: 0
+    opacity: 1
+    z-index: 1
+  .scalable
+    width: 100%
+    height: auto
+  .carousel-caption
+    display: none
+    left: 10%
+    right: 10%
+    h2
+      font-family: $fontFamilyLight
+      color: $uiWhite
+      letter-spacing: 1px
+      small
+        font-family: inherit
+        color: inherit
+        +forMobile
+          font-size: 20px
+        +forTablet
+          font-size: 32px
+        +forDesktop
+          font-size: 36px
+        +forBreakA
+          font-size: 17px
+      +forMobile
+        font-size: 24px
+        line-height: 30px
+      +forTablet
+        font-size: 38px
+        line-height: 44px
+      +forDesktop
+        font-size: 42px
+        line-height: 48px
+      +forBreakA
+        font-size: 20px
+        line-height: 23px
+
+  #carousel-video-cta
+    position: absolute
+    width: 100%
+    height: 90%
+    top: 10%
+    background: rgba(247, 182, 0, .5)
+    z-index: 100
+    h2
+      font-family: $fontFamilyLight
+      color: $uiWhite
+      letter-spacing: 1px
+      small
+        font-family: inherit
+        color: inherit
+        +forMobile
+          font-size: 20px
+        +forTablet
+          font-size: 32px
+        +forDesktop
+          font-size: 36px
+        +forBreakA
+          font-size: 17px
+      +forMobile
+        font-size: 24px
+        line-height: 30px
+      +forTablet
+        font-size: 38px
+        line-height: 44px
+      +forDesktop
+        font-size: 42px
+        line-height: 48px
+      +forBreakA
+        font-size: 20px
+        line-height: 23px
+  .left.carousel-control, .right.carousel-control
+    display: none
+  .carousel-indicators
+    display: none
+    bottom: 10px
+    @include opacity(.5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

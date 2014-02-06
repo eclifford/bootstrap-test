@@ -1,0 +1,18 @@
+<script type="text/template" id="page-intro-visual-tmpl">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gold page-intro-visual-module image-holder" data-src-base="{{data.media-url-data}}">
+      {{#data.video-url-data}}
+      <div class="tout-video-play-button" data-video-url={{data.video-url-data}}>
+          <a class="btn-video-play">Play</a>
+      </div>
+      {{/data.video-url-data}}
+      <figure class="fixed-ratio"></figure>
+      <div class="copy">
+  			<h1>{{{data.headline-data}}}</h1>
+        {{#data.subheadline-data}}
+        <p>{{{data.subheadline-data}}}</p>
+        {{/data.subheadline-data}}
+      </div>
+		</div>
+</script>
+
+

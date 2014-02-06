@@ -1,0 +1,131 @@
+{
+  "primaryNavigation" : [
+    {
+      "id": "1",
+      "title" : "Styleguide",
+      "href"  : "/pages/styleguide/"
+
+    },
+    {
+      "id": "3",
+      "title" : "Responsive Grid",
+      "href"  : "/pages/responsive/"
+    },
+    {
+      "id": "",
+      "title" : "UI Components",
+      "href"  : "/pages/ui-components/"
+    },
+    {
+      "id": "4",
+      "title" : "Templates",
+      "href"  : "/pages/templates/",
+      "subNav":
+      [
+        {
+          "id": "41",
+          "title": "Template A",
+          "href"  : "http://dev.vcom.visa.sf.akqa.com/example/01-template-a.jsp"
+        },
+        {
+          "id": "42",
+          "title": "Template B",
+          "href"  : "/pages/templates/template-b.html"
+        },
+        {
+          "id": "43",
+          "title": "Template C",
+          "href"  : "/pages/templates/template-c.html"
+        },
+        {
+          "id": "44",
+          "title": "Template D",
+          "href"  : "/pages/templates/template-d.html"
+        },
+        {
+          "id": "45",
+          "title": "Template E",
+          "href"  : "/pages/templates/template-e.html"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title" : "Modules",
+      "href"  : "/pages/modules/",
+      "subNav":
+      [
+        {
+          "id": "51",
+          "title": "Header",
+          "href"  : "/pages/modules/header.html"
+        },
+        {
+          "id": "52",
+          "title": "Footer",
+          "href"  : "/pages/modules/footer.html"
+        },
+        {
+          "id": "53",
+          "title": "Results",
+          "href": "/pages/modules/results.html"
+        },
+        {
+          "id": "54",
+          "title": "Results Holder",
+          "href": "/pages/modules/results-holder.html"
+        },
+        {
+          "id": "55",
+          "title": "User Action Module",
+          "href": "/pages/modules/user-action.html"
+        },
+        {
+          "id": "56",
+          "title": "Filter Module",
+          "href": "/pages/modules/filter.html"
+        },
+        {
+          "id": "57",
+          "title": "Hero Module",
+          "href": "/pages/modules/hero.html"
+        },
+        {
+          "id": "58",
+          "title": "Tab Holder",
+          "href": "/pages/modules/tab-holder.html"
+        },
+        {
+          "id": "59",
+          "title": "Page Intro Visual",
+          "href": "/pages/modules/page-intro-visual.html"
+        },
+        {
+          "id": "60",
+          "title": "Page Intro Copy",
+          "href": "/pages/modules/page-intro-copy.html"
+        },
+        {
+          "id": "61",
+          "title": "Breadcrumb",
+          "href": "/pages/modules/breadcrumb.html"
+        },
+        {
+          "id": "62",
+          "title": "Custom Content",
+          "href": "/pages/modules/custom-content.html"
+        },
+        {
+          "id": "64",
+          "title": "Tout Holder",
+          "href": "/pages/modules/tout-holder.html"
+        },
+        {
+          "id": "64",
+          "title": "Media Holder",
+          "href": "/pages/modules/media.html"
+        }
+      ]
+    }
+  ]
+}

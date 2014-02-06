@@ -1,0 +1,27 @@
+<script type="text/template" id="filter-module-tmpl">
+  <div class="filter-body">
+    <div class="inner-row">
+      <div class="filter-module">
+        <div class="filter-form">
+          <div class="btn-group">
+            <span class="filter-label">{{{label-data}}}</span>
+            <div class="btn-wrap">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="filter-value">{{default-data}}</span>
+                <span class="caret"></span>
+              </button>
+            </div>
+            <ul class="dropdown-menu" role="menu">
+              {{#module-data}}
+              <li><a href="#" data-category="{{category}}">{{{category-name-data}}}</a></li>
+              {{/module-data}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="filter-content-target">
+      <div class="filter-content-overlay"></div>
+    </div>
+  </div>
+</script>

@@ -1,0 +1,291 @@
+//$pageBleed:		14px
+//$grid-columns:	12
+//$col-width:		55px
+//$col-gutter: 	14px
+
+//@include make-grid($grid-columns, '.grid-container', $col-gutter)
+
+$gridGutterWidth: 3.09090909%
+$gridColumnWidth: 5.5%
+$max-width: 956px
+$max-image-width: 1600px
+
+.grid-container
+	+container-fixed
+	width: 100%
+
+	.scalable
+		width: 100%
+		height: auto
+
+	.row
+		margin: 0
+		width: 93.359375%
+		margin: 0 auto
+		max-width: $max-width
+		+forTablet
+			width: 91.145833%
+		+forMobile
+			width: 75%
+
+		&.image-max
+			width: 100%
+			max-width: $max-image-width
+			+forTablet
+				width: 100%
+			+forMobile
+				width: 100%
+
+		&.full-bleed
+			width: 100%
+			margin: 0
+			max-width: none
+			+forTablet
+				width: 100%
+			+forMobile
+				width: 100%
+
+			&.border-top
+				border-top: $borderStandard
+
+			&.border-bottom
+				border-bottom: $borderStandard
+
+			&.grey
+				background: $visaGreyPale
+
+
+
+		.inner-row
+			max-width: $max-width
+			width: 93.359375%
+			margin: 0 auto
+			+forTablet
+				width: 91.145833%
+			+forMobile
+				width: 75%
+
+		.two-wide
+			.cell
+				width: 49.895397%
+
+				&:first-child
+					padding-right: 3.9534884%
+
+				&:last-child
+					margin-left: 0
+					padding-left: 3.9534884%
+
+			&.border
+				&:first-child
+					padding-right: 3.83372093%
+
+				&:last-child
+					padding-left: 3.83372093%
+
+
+		div:first-child
+			margin-left: 0
+
+		div:first-child.inner-row
+			margin-left: auto
+
+		&.reverseMargin,
+		&.row.reverseMargin
+			margin-top: -8px
+
+		&.custom-margin
+			.col-lg-1,.col-md-1, col-sm-1,
+			.col-lg-2,.col-md-2, col-sm-2,
+			.col-lg-3,.col-md-3, col-sm-3,
+			.col-lg-4,.col-md-4, col-sm-4,
+			.col-lg-5,.col-md-5, col-sm-5,
+			.col-lg-6,.col-md-6, col-sm-6,
+			.col-lg-7,.col-md-7, col-sm-7,
+			.col-lg-8,.col-md-8, col-sm-8,
+			.col-lg-9,.col-md-9, col-sm-9,
+			.col-lg-10,.col-md-10, col-sm-10,
+			.col-lg-11,.col-md-11, col-sm-11,
+			.col-lg-12,.col-md-12, col-sm-12
+				margin-left: 0
+
+		&.blocks
+			.col-lg-1,.col-md-1, col-sm-1,
+			.col-lg-2,.col-md-2, col-sm-2,
+			.col-lg-3,.col-md-3, col-sm-3,
+			.col-lg-4,.col-md-4, col-sm-4,
+			.col-lg-5,.col-md-5, col-sm-5,
+			.col-lg-6,.col-md-6, col-sm-6,
+			.col-lg-7,.col-md-7, col-sm-7,
+			.col-lg-8,.col-md-8, col-sm-8,
+			.col-lg-9,.col-md-9, col-sm-9,
+			.col-lg-10,.col-md-10, col-sm-10,
+			.col-lg-11,.col-md-11, col-sm-11,
+			.col-lg-12,.col-md-12, col-sm-12
+				+forMobile
+					display: block
+					margin: 0
+					width: 100%
+
+		&.nested
+			width: 100%
+			margin: 0
+
+		&.nested-no-max-width
+			width: 100%
+			margin: 0
+			max-width: none
+			+forTablet
+				width: 100%
+			+forMobile
+				width: 100%
+
+			.pinched-row
+				max-width: 860px
+				width: 83.984375%
+				margin: 0 auto
+				+forTablet
+					width: 91.145833%
+				+forMobile
+					width: 75%
+
+	.last-column
+		margin-right: 0
+
+	.col-lg-1,.col-md-1, .col-sm-1, .col-xs-1
+		+makeColumn
+
+	.col-lg-2,.col-md-2, .col-sm-2, .col-xs-2
+		+makeColumn(2,0)
+
+	.col-lg-3,.col-md-3, .col-sm-3, .col-xs-3
+		+makeColumn(3,0)
+
+	.col-lg-4,.col-md-4, .col-sm-4, .col-xs-4
+		+makeColumn(4,0)
+
+	//need to determine if needed
+	.col-md-4.col-md-offset-4,
+	.col-sm-4.col-sm-offset-4,
+	.col-xs-4.col-xs-offset-4
+		+makeColumn(4,4)
+		+forMobile
+			margin-left: inherit
+
+	.col-lg-5,.col-md-5, .col-sm-5, .col-xs-5
+		+makeColumn(5,0)
+
+	.col-lg-6,.col-md-6, .col-sm-6, .col-xs-6
+		+makeColumn(6,0)
+
+	.col-lg-7,.col-md-7, .col-sm-7, .col-xs-7
+		+makeColumn(7,0)
+
+	.col-lg-8,.col-md-8, .col-sm-8, .col-xs-8
+		+makeColumn(8,0)
+
+	.col-lg-9,.col-md-9, .col-sm-9, .col-xs-9
+		+makeColumn(9,0)
+
+	.col-lg-10,.col-md-10, .col-sm-10, .col-xs-10
+		+makeColumn(10,0)
+
+	.col-lg-11,.col-md-11, .col-sm-11, .col-xs-11
+		+makeColumn(11,0)
+
+	.col-lg-12,.col-md-12, .col-sm-12, .col-xs-12
+		+makeColumn(12,0)
+
+.grid-demo
+
+	.row
+		margin-top: 10px
+		margin-bottom: 10px
+
+	.demo
+		margin-top: 25px
+		margin-bottom: 25px
+		background: transparent
+
+		p
+			margin: 10px 20px
+
+		#responsive-range-demo
+			+forBreakA
+				background: yellow
+			+forBreakB
+				background: orange
+			+forBreakC
+				background: pink
+			+forBreakD
+				background: purple
+			+forBreakE
+				background: green
+
+		#responsive-device-demo
+			+forMobile
+				background: blue
+			+forTablet
+				background: green
+			+forDesktop
+				background: red
+
+		#responsive-breakpoint-demo
+			+forBreakA
+				background: pink
+			+forBreakB
+				background: green
+			+forBreakC
+				background: grey
+			+forBreakD
+				background: red
+			+forBreakE
+				background: orange
+
+		.blockHighlight
+			background: white
+			margin: 20px
+			padding: 5px 20px
+
+			p
+				margin-top: 0
+				margin-bottom: 0
+				margin-left: 0
+
+			.sel
+				color: #093cce
+
+			.func
+				color: #20db0c
+				margin-left: 12px
+
+			.css
+				color: #243871
+				margin-left: 24px
+
+
+	#device-demo
+		margin: 25px 0
+
+		div
+			background: transparent
+
+		div
+			background: #dad0ff
+			margin-top: 10px !important
+			margin-bottom: 10px !important
+
+	.col-md-1, .col-sm-1, .col-xs-1,
+	.col-md-2, .col-sm-2, .col-xs-2,
+	.col-md-3, .col-sm-3, .col-xs-3,
+	.col-md-4, .col-sm-4, .col-xs-4,
+	.col-md-5, .col-sm-5, .col-xs-5,
+	.col-md-6, .col-sm-6, .col-xs-6,
+	.col-md-7, .col-sm-7, .col-xs-7,
+	.col-md-8, .col-sm-8, .col-xs-8,
+	.col-md-9, .col-sm-9, .col-xs-9,
+	.col-md-10, .col-sm-10, .col-xs-10,
+	.col-md-11, .col-sm-11, .col-xs-11,
+	.col-md-12, .col-sm-12, .col-xs-12
+		background: #f6ffd0
+		min-height: 100px

@@ -1,0 +1,106 @@
+<script type="text/template" id="row-container-tmpl">
+  <div class="row blocks full-bleed grey reverseMargin tab-content">
+    <div class="inner-row">
+    </div>
+  </div>
+</script>
+
+<script type="text/template" id="single-cta-tmpl">
+  <div class="tab-content-holder">
+    <div class="col-lg-11 col-md-10 col-sm-11 intro-copy">
+      <h3 class="med">{{{data.tab-headline}}}</h3>
+      <p class="main-copy">{{{data.tab-subheadline-data}}}</p>
+      <a href="{{data.tab-cta-url-data}}" class="btn-primary">{{data.tab-cta-copy-data}}</a>
+    </div>
+    <div class="col-md-1 col-sm-1"></div>
+  </div>
+</script>
+
+<script type="text/template" id="single-cta-image-tmpl">
+  <div class="tab-content-holder">
+    <div class="col-md-7 col-sm-7 intro-copy">
+      <h3 class="med">{{{data.tab-headline}}}</h3>
+      <p class="main-copy">{{{data.tab-subheadline-data}}}</p>
+      <a href="{{data.tab-cta-url-data}}" class="btn-primary">{{data.tab-cta-copy-data}}</a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 image-holder">
+      <img alt='{{data.media-alt-text}}' class="scalable"
+          data-src-base='{{data.tab-image-url-data}}'
+          data-src='<640:-mobile.jpg,>640:.jpg' />
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
+  </div>
+</script>
+
+<script type="text/template" id="dropdown-cta-tmpl">
+			<div class="tab-content-holder">
+				<div class="col-md-11 col-sm-11 intro-copy">
+					<h3 class="med">{{{data.tab-headline}}}</h3>
+					<p class="main-copy">{{{data.tab-subheadline-data}}}</p>
+					<div class="bootstrap-select light">
+            <select>
+              <option value="">Select one</option>
+        		  {{#data.dropdown-data}}
+          		  <option value="{{dropdown-url}}">{{dropdown-name}}</option>
+              {{/data.dropdown-data}}
+            </select>
+        	  <a href="" class="bootstrap-select-go btn-primary disable">{{data.tab-cta-copy-data}}</a>
+				  </div>
+				<div class="col-lg-1 col-md-1 col-sm-1"></div>
+			</div>
+</script>
+
+<script type="text/template" id="dropdown-cta-image-tmpl">
+      <div class="tab-content-holder">
+        <div class="col-md-7 col-sm-7 intro-copy">
+          <h3 class="med">{{{data.tab-headline}}}</h3>
+          <p class="main-copy">{{{data.tab-subheadline-data}}}</p>
+          <div class="bootstrap-select light">
+            <select>
+              <option value="">Select one</option>
+              {{#data.dropdown-data}}
+                <option value="{{dropdown-url}}">{{dropdown-name}}</option>
+              {{/data.dropdown-data}}
+            </select>
+            <a href="{{data.tab-cta-url-data}}" class="bootstrap-select-go btn-primary disable">{{data.tab-cta-copy-data}}</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 image-holder">
+          <img alt='{{data.media-alt-text}}' class="scalable"
+            data-src-base='{{data.tab-image-url-data}}'
+            data-src='<640:-mobile.jpg,>640:.jpg' />
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+      </div>
+</script>
+
+<script type="text/template" id="dual-input-tmpl">
+      <div class="tab-content-holder">
+        <div class="col-lg-11 col-md-11 col-sm-11 intro-copy">
+          <h3 class="med">{{{data.tab-headline}}}</h3>
+          <p class="main-copy">{{{data.tab-subheadline-data}}}</p>
+          <p><input type="text" class="param1" value="{{data.text-input-a}}" />
+          <input type="text" class="param2" value="{{data.text-input-b}}" /></p>
+          <a href="{{data.tab-cta-url-data}}" data-format="{{data.cta-submit-format}}" class="btn-primary tab-input-form-submit">{{data.tab-cta-copy-data}}</a>
+        </div>
+        <div class="col-md-1 col-sm-1"></div>
+      </div>
+</script>
+
+<script type="text/template" id="dual-input-image-tmpl">
+      <div class="tab-content-holder">
+        <div class="col-lg-7 col-md-7 col-sm-7 intro-copy">
+          <h3 class="med">{{{data.tab-headline}}}</h3>
+          <p class="main-copy">{{{data.tab-subheadline-data}}}</p>
+          <p><input type="text" value="{{data.text-input-a}}" />
+          <input type="text" value="{{data.text-input-b}}" /></p>
+          <a href="{{tab-cta-url-data}}" class="btn-primary">{{data.tab-cta-copy-data}}</a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 image-holder">
+          <img alt='{{data.media-alt-text}}' class="scalable"
+              data-src-base='{{data.tab-image-url-data}}'
+              data-src='<640:-mobile.jpg,>640:.jpg' />
+        </div>
+        <div class="col-md-1 col-sm-1"></div>
+      </div>
+</script>
